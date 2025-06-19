@@ -3,599 +3,735 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Multi Tools - Professional Digital Toolkit</title>
+    <title>YourMultiTools.space - World's #1 PDF Tools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6C63FF;
-            --secondary: #4A4AFF;
-            --accent: #FF6584;
-            --light: #F8F9FF;
-            --dark: #2F2E41;
-            --gray: #6B6B6B;
-            --light-gray: #EFF0F7;
-            --card-shadow: 0 15px 35px rgba(108, 99, 255, 0.15);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--light);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             color: var(--dark);
             line-height: 1.6;
-            min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Header Styles */
-        header {
-            background: rgba(248, 249, 255, 0.95);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        /* Animated Background Elements */
+        .bg-elements {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            opacity: 0.3;
+            animation: float 15s infinite linear;
+        }
+        
+        .bg-element:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 25s;
+        }
+        
+        .bg-element:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            left: 80%;
+            animation-duration: 20s;
+            animation-delay: -5s;
+        }
+        
+        .bg-element:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            left: 70%;
+            animation-duration: 15s;
+            animation-delay: -10s;
+        }
+        
+        .bg-element:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            top: 75%;
+            left: 15%;
+            animation-duration: 30s;
+            animation-delay: -7s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 15px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 30px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-20px, 15px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
             backdrop-filter: blur(10px);
-            padding: 18px 0;
-            transform: translateY(0);
-            transition: var(--transition);
         }
-
-        header.scrolled {
-            padding: 12px 0;
-            box-shadow: 0 5px 25px rgba(108, 99, 255, 0.1);
-        }
-
+        
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+        
+        .logo-text {
             font-family: 'Montserrat', sans-serif;
-            text-decoration: none;
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--dark);
         }
-
-        .logo i {
-            color: var(--secondary);
-            font-size: 32px;
-            transition: var(--transition);
+        
+        .logo-text span {
+            color: var(--primary);
         }
-
-        .logo span {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .logo:hover i {
-            transform: rotate(15deg);
-        }
-
+        
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 30px;
         }
-
+        
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 600;
-            transition: var(--transition);
+            font-weight: 500;
+            transition: color 0.3s;
             position: relative;
-            font-size: 17px;
         }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
+        
         .nav-links a::after {
             content: '';
             position: absolute;
+            width: 0;
+            height: 2px;
             bottom: -5px;
             left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 2px;
-            transition: var(--transition);
+            background-color: var(--primary);
+            transition: width 0.3s;
         }
-
-        .nav-links a:hover::after {
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
             width: 100%;
         }
-
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
         }
-
-        .btn {
-            padding: 14px 32px;
-            border-radius: 12px;
+        
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            border: none;
+            transition: all 0.3s;
             font-size: 16px;
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
         }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(37, 99, 235, 0.4);
         }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(108, 99, 255, 0.5);
-        }
-
+        
         /* Hero Section */
         .hero {
-            padding: 180px 0 100px;
+            padding: 100px 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -300px;
-            right: -300px;
-            width: 700px;
-            height: 700px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(108,99,255,0.15) 0%, rgba(108,99,255,0) 70%);
-            z-index: -1;
-            animation: pulse 6s infinite ease-in-out;
-        }
-
+        
         .hero-content {
-            max-width: 700px;
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
+        
         .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 900;
-            margin-bottom: 25px;
-            line-height: 1.15;
             font-family: 'Montserrat', sans-serif;
-            color: var(--dark);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s forwards 0.3s;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out;
         }
-
+        
         .hero h1 span {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.35rem;
-            margin-bottom: 40px;
-            color: var(--gray);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s forwards 0.5s;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            margin-top: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s forwards 0.7s;
-        }
-
-        .hero-image {
-            position: absolute;
-            top: 100px;
-            right: 0;
-            width: 45%;
-            opacity: 0;
-            transform: translateX(100px);
-            animation: fadeInRight 1s forwards 0.8s;
-        }
-
-        /* Tools Section */
-        .section {
-            padding: 120px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
+            -webkit-text-fill-color: transparent;
             position: relative;
         }
-
-        .section-title h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--dark);
-            display: inline-block;
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #475569;
             position: relative;
             z-index: 2;
-            padding: 0 30px;
-            background: var(--light);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            z-index: 1;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .tool-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            padding: 40px 30px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid rgba(108, 99, 255, 0.1);
+            animation: fadeInUp 1s ease-out 0.2s forwards;
             opacity: 0;
-            transform: translateY(50px);
         }
-
-        .tool-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
-        }
-
-        .tool-icon {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, rgba(108,99,255,0.1) 0%, rgba(74,74,255,0.05) 100%);
-            border-radius: 20px;
-            display: flex;
+        
+        .badge {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
             margin-bottom: 30px;
-            transition: var(--transition);
-        }
-
-        .tool-card:hover .tool-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, rgba(108,99,255,0.15) 0%, rgba(74,74,255,0.1) 100%);
-        }
-
-        .tool-icon i {
-            font-size: 40px;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .tool-card:hover .tool-icon i {
-            color: var(--secondary);
-        }
-
-        .tool-card h3 {
-            font-size: 1.7rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .tool-card p {
-            color: var(--gray);
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .tool-card .btn {
-            padding: 12px 28px;
-            font-size: 16px;
-        }
-
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .feature {
-            background: white;
-            padding: 40px 35px;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            gap: 25px;
-            border: 1px solid rgba(108, 99, 255, 0.1);
-            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out 0.1s forwards;
             opacity: 0;
-            transform: translateY(50px);
         }
-
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
-        }
-
-        .feature-icon {
-            background: linear-gradient(135deg, rgba(108,99,255,0.1) 0%, rgba(74,74,255,0.05) 100%);
-            min-width: 80px;
-            height: 80px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .feature:hover .feature-icon {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, rgba(108,99,255,0.15) 0%, rgba(74,74,255,0.1) 100%);
-        }
-
-        .feature-icon i {
-            color: var(--primary);
-            font-size: 32px;
-            transition: var(--transition);
-        }
-
-        .feature:hover .feature-icon i {
-            color: var(--secondary);
-        }
-
-        .feature-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .feature-content p {
-            color: var(--gray);
-            line-height: 1.7;
-        }
-
-        /* Animation Classes */
-        .animate {
-            opacity: 1;
-            transform: translateY(0) !important;
-        }
-
-        /* Animations */
-        @keyframes fadeUp {
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        @keyframes fadeInRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        
+        /* Tools Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
         }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
+        
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
         }
-
+        
+        .section-title h2 span {
+            color: var(--primary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid #e2e8f0;
+            transform: translateY(0);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .card-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .tool-list {
+            list-style: none;
+        }
+        
+        .tool-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .tool-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tool-checkbox {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gray);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: default;
+        }
+        
+        .tool-checkbox.checked {
+            background: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .tool-checkbox.checked::after {
+            content: "✓";
+            color: white;
+            font-size: 12px;
+        }
+        
+        .tool-name {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .pricing-card.popular {
+            transform: scale(1.05);
+            border: 2px solid var(--primary);
+            z-index: 3;
+        }
+        
+        .pricing-card.popular::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-header {
+            margin-bottom: 30px;
+        }
+        
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .pricing-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .pricing-period {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .buy-button {
+            display: inline-block;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            text-decoration: none;
+        }
+        
+        .buy-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(37, 99, 235, 0.4);
+        }
+        
+        .buy-button.secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        .buy-button.secondary:hover {
+            background: #f1f5f9;
+        }
+        
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: white;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .feature-card p {
+            color: #64748b;
+        }
+        
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+            background: var(--dark);
             color: white;
-            padding: 100px 0 40px;
+            padding: 60px 0 30px;
             position: relative;
         }
-
-        .footer-content {
+        
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
-
-        .footer-column h3 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 15px;
-            font-weight: 700;
+            padding-bottom: 10px;
         }
-
-        .footer-column h3::after {
+        
+        .footer-col h3::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: var(--primary);
-            border-radius: 2px;
+            border-radius: 3px;
         }
-
-        .footer-column p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 20px;
-            line-height: 1.7;
-        }
-
-        .footer-column ul {
+        
+        .footer-links {
             list-style: none;
         }
-
-        .footer-column ul li {
-            margin-bottom: 15px;
+        
+        .footer-links li {
+            margin-bottom: 12px;
         }
-
-        .footer-column ul li a {
-            color: rgba(255, 255, 255, 0.7);
+        
+        .footer-links a {
+            color: #cbd5e1;
             text-decoration: none;
-            transition: var(--transition);
-            display: block;
-            padding: 5px 0;
+            transition: color 0.3s;
         }
-
-        .footer-column ul li a:hover {
-            color: var(--accent);
-            padding-left: 8px;
+        
+        .footer-links a:hover {
+            color: var(--primary);
         }
-
+        
         .copyright {
             text-align: center;
-            padding-top: 60px;
-            margin-top: 60px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 1rem;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
-
-        .domain {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
+        
         /* Responsive Design */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3.2rem;
+            .pricing-card.popular {
+                transform: scale(1);
             }
             
-            .hero-image {
-                position: relative;
-                width: 100%;
-                top: 0;
-                margin-top: 50px;
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
             .nav-links {
                 display: none;
             }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 150px 0 70px;
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
             }
             
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2rem;
             }
             
             .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .section-title h2 {
-                font-size: 2.4rem;
-            }
-            
-            .tool-card, .feature {
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.3rem;
+                font-size: 1rem;
             }
             
             .section-title h2 {
                 font-size: 2rem;
             }
             
-            .btn {
-                padding: 12px 24px;
-                width: 100%;
-                justify-content: center;
+            .pricing-price {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
+    <!-- Animated Background -->
+    <div class="bg-elements">
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+        <div class="bg-element"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-tools"></i>
-                    <span>Your Multi Tools</span>
-                </a>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="logo-text">Your<span>MultiTools</span></div>
+                </div>
                 <div class="nav-links">
-                    <a href="#">Home</a>
+                    <a href="#" class="active">Home</a>
                     <a href="#">Tools</a>
-                    <a href="#">Features</a>
                     <a href="#">Pricing</a>
-                    <a href="#">Contact</a>
+                    <a href="#">Features</a>
+                    <a href="#">Support</a>
                 </div>
-                <div class="nav-buttons">
-                    <button class="btn btn-outline">Log In</button>
-                    <button class="btn btn-primary">Get Started</button>
-                </div>
+                <button class="cta-button">Get Started</button>
             </nav>
         </div>
     </header>
@@ -604,133 +740,363 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Professional <span>PDF Tools</span> for All Your Needs</h1>
-                <p>Transform, optimize, and manage your documents with our comprehensive suite of professional tools. Experience the power of seamless PDF processing at <span class="domain">yourmultitools.space</span>.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <i class="fas fa-bolt"></i>Get Started Free
-                    </button>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-eye"></i>View All Tools
-                    </button>
+                <div class="badge">
+                    <i class="fas fa-crown"></i>
+                    WORLD'S #1 PDF TOOLS WEBSITE
                 </div>
+                <h1>All Your <span>PDF Tools</span> in One Place</h1>
+                <p>Transform, edit, secure, and manage your PDFs with our comprehensive suite of tools. Trusted by millions worldwide for professional PDF solutions.</p>
+                <button class="cta-button">Start Free Trial</button>
             </div>
-            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800" alt="Digital Tools" class="hero-image">
         </div>
     </section>
 
-    <!-- PDF Tools Section -->
-    <section class="section" id="tools">
+    <!-- Tools Section -->
+    <section class="tools">
         <div class="container">
             <div class="section-title">
-                <h2>Essential PDF Tools</h2>
+                <h2>Powerful <span>PDF Tools</span> at Your Fingertips</h2>
+                <p>Everything you need to work with PDFs efficiently and professionally</p>
             </div>
+            
             <div class="tools-grid">
+                <!-- Tool Card 1 -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-object-group"></i>
+                    <div class="card-header">
+                        <h3>ORGANIZE PDF</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
                     </div>
-                    <h3>Merge PDF</h3>
-                    <p>Combine multiple PDF files into one unified document with our intuitive merging tool. Perfect for reports and presentations.</p>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-arrow-right"></i>Merge Files
-                    </button>
+                    <div class="card-content">
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Merge PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox checked"></div>
+                                <div class="tool-name">Compress PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">JPG to PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">PDF to JPG</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox checked"></div>
+                                <div class="tool-name">Rotate PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Unlock PDF</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+                
+                <!-- Tool Card 2 -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-cut"></i>
+                    <div class="card-header">
+                        <h3>CONVERT TO PDF</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-file-export"></i>
+                        </div>
                     </div>
-                    <h3>Split PDF</h3>
-                    <p>Divide a single PDF into multiple documents or extract specific pages with precision. Ideal for large documents.</p>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-arrow-right"></i>Split Document
-                    </button>
+                    <div class="card-content">
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Split PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Repair PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">WORD to PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">PDF to WORD</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Add page numbers</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Protect PDF</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+                
+                <!-- Tool Card 3 -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-compress-alt"></i>
+                    <div class="card-header">
+                        <h3>EDIT PDF</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
                     </div>
-                    <h3>Compress PDF</h3>
-                    <p>Reduce PDF file size without compromising quality for easier sharing and storage. Optimize your documents.</p>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-arrow-right"></i>Compress Now
-                    </button>
+                    <div class="card-content">
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <div class="tool-checkbox checked"></div>
+                                <div class="tool-name">Remove pages</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">OCR PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">POWERPOINT to PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">PDF to POWERPOINT</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Add watermark</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Sign PDF</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tool Card 4 -->
+                <div class="tool-card">
+                    <div class="card-header">
+                        <h3>CONVERT FROM PDF</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-file-import"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Extract pages</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">EXCEL to PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">PDF to EXCEL</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Drop PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Redact PDF</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tool Card 5 -->
+                <div class="tool-card">
+                    <div class="card-header">
+                        <h3>PDF SECURITY</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Organize PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">HTML to PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">PDF to PDF/A</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Edit PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Compare PDF</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tool Card 6 -->
+                <div class="tool-card">
+                    <div class="card-header">
+                        <h3>SCAN TO PDF</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-scanner"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="tool-list">
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Scan to PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Optimize Scanned PDF</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">OCR Technology</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Multi-page Scanning</div>
+                            </li>
+                            <li class="tool-item">
+                                <div class="tool-checkbox"></div>
+                                <div class="tool-name">Auto Crop & Straighten</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- More Tools Section -->
-    <section class="section" style="background: linear-gradient(135deg, #f8faff 0%, #f0f5ff 100%);">
+    <!-- Pricing Section -->
+    <section class="pricing">
         <div class="container">
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-exchange-alt"></i>
+            <div class="section-title">
+                <h2>Simple, <span>Transparent</span> Pricing</h2>
+                <p>Choose the perfect plan for your needs. All plans include all features.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Starter</div>
+                        <div class="pricing-price">$0</div>
+                        <div class="pricing-period">Free Forever</div>
                     </div>
-                    <h3>Convert PDF</h3>
-                    <p>Transform PDFs to Word, Excel, PowerPoint, images and vice versa seamlessly. Maintain perfect formatting.</p>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-arrow-right"></i>Convert Files
-                    </button>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Basic PDF editing tools</li>
+                        <li><i class="fas fa-check-circle"></i> 5 documents per month</li>
+                        <li><i class="fas fa-check-circle"></i> 25MB file size limit</li>
+                        <li><i class="fas fa-times-circle"></i> Priority support</li>
+                        <li><i class="fas fa-times-circle"></i> Advanced security features</li>
+                    </ul>
+                    <a href="#" class="buy-button secondary">Get Started</a>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-lock"></i>
+                
+                <!-- Popular Plan -->
+                <div class="pricing-card popular">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Professional</div>
+                        <div class="pricing-price">$9.99</div>
+                        <div class="pricing-period">Per month</div>
                     </div>
-                    <h3>Protect PDF</h3>
-                    <p>Add passwords and permissions to your PDF files to prevent unauthorized access. Enterprise-grade security.</p>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-arrow-right"></i>Secure Files
-                    </button>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> All PDF tools</li>
+                        <li><i class="fas fa-check-circle"></i> 100 documents per month</li>
+                        <li><i class="fas fa-check-circle"></i> 100MB file size limit</li>
+                        <li><i class="fas fa-check-circle"></i> Priority support</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced security features</li>
+                    </ul>
+                    <a href="#" class="buy-button">Buy Now</a>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-file-signature"></i>
+                
+                <!-- Business Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Business</div>
+                        <div class="pricing-price">$29.99</div>
+                        <div class="pricing-period">Per month</div>
                     </div>
-                    <h3>Sign PDF</h3>
-                    <p>Add digital signatures to your documents securely from any device. Legally binding and compliant.</p>
-                    <button class="btn btn-outline">
-                        <i class="fas fa-arrow-right"></i>Add Signature
-                    </button>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> All PDF tools</li>
+                        <li><i class="fas fa-check-circle"></i> Unlimited documents</li>
+                        <li><i class="fas fa-check-circle"></i> 500MB file size limit</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 dedicated support</li>
+                        <li><i class="fas fa-check-circle"></i> Enterprise-grade security</li>
+                    </ul>
+                    <a href="#" class="buy-button secondary">Buy Now</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="section" id="features">
+    <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Your Multi Tools</h2>
+                <h2>Why Choose <span>YourMultiTools</span></h2>
+                <p>Discover what makes us the world's leading PDF solution</p>
             </div>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Bank-Level Security</h3>
-                        <p>Your files are protected with 256-bit SSL encryption and automatically deleted after processing. We never store your documents.</p>
-                    </div>
-                </div>
-                <div class="feature">
+            
+            <div class="features-grid">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="feature-content">
-                        <h3>Lightning Fast Processing</h3>
-                        <p>Process large files in seconds using our cloud-powered infrastructure. No queues, no waiting - instant results.</p>
-                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Process your documents in seconds with our optimized cloud infrastructure</p>
                 </div>
-                <div class="feature">
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Bank-Level Security</h3>
+                    <p>256-bit encryption ensures your files are protected and private</p>
+                </div>
+                
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-infinity"></i>
                     </div>
-                    <div class="feature-content">
-                        <h3>No Limits, No Watermarks</h3>
-                        <p>Unlimited file processing with no watermarks or restrictions - completely free for essential tasks.</p>
+                    <h3>Unlimited Tools</h3>
+                    <p>Access all tools with a single subscription - no hidden fees</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
                     </div>
+                    <h3>Cloud Powered</h3>
+                    <p>Access your files from anywhere, on any device, at any time</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Collaboration</h3>
+                    <p>Share and collaborate on documents with your team seamlessly</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our experts are always ready to help you with any questions</p>
                 </div>
             </div>
         </div>
@@ -739,99 +1105,95 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Your Multi Tools</h3>
-                    <p>Professional tools for document management and conversion. Trusted by thousands of users worldwide for reliable PDF processing at <span class="domain">yourmultitools.space</span>.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>YourMultiTools.space</h3>
+                    <p>The world's leading PDF solution platform with over 5 million satisfied users worldwide.</p>
                 </div>
-                <div class="footer-column">
-                    <h3>PDF Tools</h3>
-                    <ul>
-                        <li><a href="#">Merge PDF</a></li>
-                        <li><a href="#">Split PDF</a></li>
-                        <li><a href="#">Compress PDF</a></li>
-                        <li><a href="#">Convert PDF</a></li>
-                        <li><a href="#">All PDF Tools</a></li>
+                
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">PDF Organizer</a></li>
+                        <li><a href="#">PDF Converter</a></li>
+                        <li><a href="#">PDF Editor</a></li>
+                        <li><a href="#">PDF Security</a></li>
+                        <li><a href="#">PDF Scanner</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Pricing Plans</a></li>
-                        <li><a href="#">Contact Support</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog & Updates</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
+                
+                <div class="footer-col">
                     <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API Access</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
                         <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Press</a></li>
                     </ul>
                 </div>
             </div>
+            
             <div class="copyright">
-                <p>&copy; 2023 Your Multi Tools. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 YourMultiTools.space - World's #1 PDF Tools Website. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.tool-card, .feature');
-            elements.forEach(el => {
-                const elementPosition = el.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
+        // Add animation to tool cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tool cards animation
+            const toolCards = document.querySelectorAll('.tool-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            toolCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Feature cards hover effect
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Pricing cards animation
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.5s ease ' + (index * 0.1) + 's';
                 
-                if(elementPosition < screenPosition) {
-                    el.classList.add('animate');
-                }
-            });
-        };
-
-        // Initialize animations
-        window.addEventListener('DOMContentLoaded', () => {
-            // Setup scroll event listener
-            window.addEventListener('scroll', animateOnScroll);
-            
-            // Trigger once on load in case elements are already in view
-            animateOnScroll();
-            
-            // Add hover effect to buttons
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', () => {
-                    button.style.transform = 'translateY(-5px)';
-                });
-                button.addEventListener('mouseleave', () => {
-                    button.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Add click animation to buttons
-            buttons.forEach(button => {
-                button.addEventListener('mousedown', () => {
-                    button.style.transform = 'translateY(2px)';
-                });
-                button.addEventListener('mouseup', () => {
-                    button.style.transform = 'translateY(-5px)';
-                });
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, 500 + (index * 100));
             });
         });
     </script>
