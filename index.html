@@ -385,6 +385,7 @@ display: flex;
 align-items: center;
 gap: 1.2rem;
 transition: var(--transition);
+cursor: pointer;
 }
 
 .tool-item:last-child {
@@ -797,6 +798,7 @@ gap: 1rem;
 border: 1px solid var(--glass-border);
 backdrop-filter: blur(10px);
 transition: var(--transition);
+cursor: pointer;
 }
 
 .result-card:hover {
@@ -1032,27 +1034,27 @@ yourmultitools.space
 <h3>ORGANIZE PDF</h3>
 </div>
 <div class="tools-list">
-<div class="tool-item" data-tool="Merge PDF">
+<div class="tool-item" data-tool="Merge PDF" data-category="PDF Tools">
 <i class="fas fa-object-group"></i>
 <span>Merge PDF</span>
 </div>
-<div class="tool-item" data-tool="Compress PDF">
+<div class="tool-item" data-tool="Compress PDF" data-category="PDF Tools">
 <i class="fas fa-compress-alt"></i>
 <span>Compress PDF</span>
 </div>
-<div class="tool-item" data-tool="JPG to PDF">
+<div class="tool-item" data-tool="JPG to PDF" data-category="PDF Tools">
 <i class="fas fa-file-image"></i>
 <span>JPG to PDF</span>
 </div>
-<div class="tool-item" data-tool="PDF to JPG">
+<div class="tool-item" data-tool="PDF to JPG" data-category="PDF Tools">
 <i class="fas fa-image"></i>
 <span>PDF to JPG</span>
 </div>
-<div class="tool-item" data-tool="Rotate PDF">
+<div class="tool-item" data-tool="Rotate PDF" data-category="PDF Tools">
 <i class="fas fa-sync-alt"></i>
 <span>Rotate PDF</span>
 </div>
-<div class="tool-item" data-tool="Unlock PDF">
+<div class="tool-item" data-tool="Unlock PDF" data-category="PDF Tools">
 <i class="fas fa-unlock"></i>
 <span>Unlock PDF</span>
 </div>
@@ -1066,27 +1068,27 @@ yourmultitools.space
 <h3>CONVERT TO PDF</h3>
 </div>
 <div class="tools-list">
-<div class="tool-item" data-tool="Split PDF">
+<div class="tool-item" data-tool="Split PDF" data-category="PDF Tools">
 <i class="fas fa-cut"></i>
 <span>Split PDF</span>
 </div>
-<div class="tool-item" data-tool="Repair PDF">
+<div class="tool-item" data-tool="Repair PDF" data-category="PDF Tools">
 <i class="fas fa-wrench"></i>
 <span>Repair PDF</span>
 </div>
-<div class="tool-item" data-tool="WORD to PDF">
+<div class="tool-item" data-tool="WORD to PDF" data-category="PDF Tools">
 <i class="fab fa-microsoft"></i>
 <span>WORD to PDF</span>
 </div>
-<div class="tool-item" data-tool="PDF to WORD">
+<div class="tool-item" data-tool="PDF to WORD" data-category="PDF Tools">
 <i class="fas fa-file-word"></i>
 <span>PDF to WORD</span>
 </div>
-<div class="tool-item" data-tool="Add page numbers">
+<div class="tool-item" data-tool="Add page numbers" data-category="PDF Tools">
 <i class="fas fa-list-ol"></i>
 <span>Add page numbers</span>
 </div>
-<div class="tool-item" data-tool="Protect PDF">
+<div class="tool-item" data-tool="Protect PDF" data-category="PDF Tools">
 <i class="fas fa-shield-alt"></i>
 <span>Protect PDF</span>
 </div>
@@ -1100,23 +1102,23 @@ yourmultitools.space
 <h3>EXTRACT FROM PDF</h3>
 </div>
 <div class="tools-list">
-<div class="tool-item" data-tool="Extract pages">
+<div class="tool-item" data-tool="Extract pages" data-category="PDF Tools">
 <i class="fas fa-copy"></i>
 <span>Extract pages</span>
 </div>
-<div class="tool-item" data-tool="EXCEL to PDF">
+<div class="tool-item" data-tool="EXCEL to PDF" data-category="PDF Tools">
 <i class="fas fa-file-excel"></i>
 <span>EXCEL to PDF</span>
 </div>
-<div class="tool-item" data-tool="PDF to EXCEL">
+<div class="tool-item" data-tool="PDF to EXCEL" data-category="PDF Tools">
 <i class="far fa-file-excel"></i>
 <span>PDF to EXCEL</span>
 </div>
-<div class="tool-item" data-tool="Delete PDF">
+<div class="tool-item" data-tool="Delete PDF" data-category="PDF Tools">
 <i class="fas fa-trash-alt"></i>
 <span>Delete PDF</span>
 </div>
-<div class="tool-item" data-tool="Redact PDF">
+<div class="tool-item" data-tool="Redact PDF" data-category="PDF Tools">
 <i class="fas fa-eye-slash"></i>
 <span>Redact PDF</span>
 </div>
@@ -1140,27 +1142,27 @@ yourmultitools.space
 <h3>AUDIO TOOLS</h3>
 </div>
 <div class="av-list">
-<div class="tool-item" data-tool="Compress Audio">
+<div class="tool-item" data-tool="Compress Audio" data-category="Audio Tools">
 <i class="fas fa-file-audio"></i>
 <span>Compress Audio</span>
 </div>
-<div class="tool-item" data-tool="Convert Audio">
+<div class="tool-item" data-tool="Convert Audio" data-category="Audio Tools">
 <i class="fas fa-exchange-alt"></i>
 <span>Convert Audio</span>
 </div>
-<div class="tool-item" data-tool="Extract Audio">
+<div class="tool-item" data-tool="Extract Audio" data-category="Audio Tools">
 <i class="fas fa-cut"></i>
 <span>Extract Audio</span>
 </div>
-<div class="tool-item" data-tool="Merge Audio">
+<div class="tool-item" data-tool="Merge Audio" data-category="Audio Tools">
 <i class="fas fa-object-group"></i>
 <span>Merge Audio</span>
 </div>
-<div class="tool-item" data-tool="Trim Audio">
+<div class="tool-item" data-tool="Trim Audio" data-category="Audio Tools">
 <i class="fas fa-sliders-h"></i>
 <span>Trim Audio</span>
 </div>
-<div class="tool-item" data-tool="Audio to Text">
+<div class="tool-item" data-tool="Audio to Text" data-category="Audio Tools">
 <i class="fas fa-font"></i>
 <span>Audio to Text</span>
 </div>
@@ -1174,27 +1176,27 @@ yourmultitools.space
 <h3>VIDEO TOOLS</h3>
 </div>
 <div class="av-list">
-<div class="tool-item" data-tool="Compress Video">
+<div class="tool-item" data-tool="Compress Video" data-category="Video Tools">
 <i class="fas fa-file-video"></i>
 <span>Compress Video</span>
 </div>
-<div class="tool-item" data-tool="Convert Video">
+<div class="tool-item" data-tool="Convert Video" data-category="Video Tools">
 <i class="fas fa-exchange-alt"></i>
 <span>Convert Video</span>
 </div>
-<div class="tool-item" data-tool="Extract Audio from Video">
+<div class="tool-item" data-tool="Extract Audio from Video" data-category="Video Tools">
 <i class="fas fa-headphones"></i>
 <span>Extract Audio from Video</span>
 </div>
-<div class="tool-item" data-tool="Merge Video">
+<div class="tool-item" data-tool="Merge Video" data-category="Video Tools">
 <i class="fas fa-object-group"></i>
 <span>Merge Video</span>
 </div>
-<div class="tool-item" data-tool="Trim Video">
+<div class="tool-item" data-tool="Trim Video" data-category="Video Tools">
 <i class="fas fa-cut"></i>
 <span>Trim Video</span>
 </div>
-<div class="tool-item" data-tool="Video to GIF">
+<div class="tool-item" data-tool="Video to GIF" data-category="Video Tools">
 <i class="fas fa-film"></i>
 <span>Video to GIF</span>
 </div>
@@ -1208,27 +1210,27 @@ yourmultitools.space
 <h3>COMPRESSION TOOLS</h3>
 </div>
 <div class="av-list">
-<div class="tool-item" data-tool="Image Compressor">
+<div class="tool-item" data-tool="Image Compressor" data-category="Compression Tools">
 <i class="fas fa-file-image"></i>
 <span>Image Compressor</span>
 </div>
-<div class="tool-item" data-tool="Bulk File Compressor">
+<div class="tool-item" data-tool="Bulk File Compressor" data-category="Compression Tools">
 <i class="fas fa-file-archive"></i>
 <span>Bulk File Compressor</span>
 </div>
-<div class="tool-item" data-tool="Lossless Compression">
+<div class="tool-item" data-tool="Lossless Compression" data-category="Compression Tools">
 <i class="fas fa-file-contract"></i>
 <span>Lossless Compression</span>
 </div>
-<div class="tool-item" data-tool="Lossy Compression">
+<div class="tool-item" data-tool="Lossy Compression" data-category="Compression Tools">
 <i class="fas fa-file-export"></i>
 <span>Lossy Compression</span>
 </div>
-<div class="tool-item" data-tool="Video Compressor">
+<div class="tool-item" data-tool="Video Compressor" data-category="Compression Tools">
 <i class="fas fa-video"></i>
 <span>Video Compressor</span>
 </div>
-<div class="tool-item" data-tool="Audio Compressor">
+<div class="tool-item" data-tool="Audio Compressor" data-category="Compression Tools">
 <i class="fas fa-music"></i>
 <span>Audio Compressor</span>
 </div>
@@ -1446,150 +1448,174 @@ Get Started Now
 <script>
 // Create animated particles
 function createParticles() {
-const container = document.getElementById('particles');
-const particleCount = 30;
+    const container = document.getElementById('particles');
+    const particleCount = 30;
 
-for (let i = 0; i < particleCount; i++) {
-const particle = document.createElement('div');
-particle.classList.add('particle');
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
 
-// Random size (10px to 50px)
-const size = Math.random() * 40 + 10;
-particle.style.width = `${size}px`;
-particle.style.height = `${size}px`;
+        // Random size (10px to 50px)
+        const size = Math.random() * 40 + 10;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
 
-// Random position
-const posX = Math.random() * 100;
-const posY = Math.random() * 100 + 100;
-particle.style.left = `${posX}%`;
-particle.style.top = `${posY}%`;
+        // Random position
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100 + 100;
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
 
-// Random animation duration (10s to 25s)
-const duration = Math.random() * 15 + 10;
-particle.style.animationDuration = `${duration}s`;
+        // Random animation duration (10s to 25s)
+        const duration = Math.random() * 15 + 10;
+        particle.style.animationDuration = `${duration}s`;
 
-// Random delay
-const delay = Math.random() * 5;
-particle.style.animationDelay = `${delay}s`;
+        // Random delay
+        const delay = Math.random() * 5;
+        particle.style.animationDelay = `${delay}s`;
 
-container.appendChild(particle);
+        container.appendChild(particle);
+    }
 }
-}
 
-// Initialize animations
+// Initialize animations and search functionality
 document.addEventListener('DOMContentLoaded', function() {
-createParticles();
+    createParticles();
 
-// Animate hero elements
-const heroElements = document.querySelectorAll('.hero h1, .hero p, .search-container, .stat-item');
-heroElements.forEach((el, index) => {
-setTimeout(() => {
-el.style.opacity = '1';
-el.style.transform = 'translateY(0)';
-}, 300 * index);
-});
+    // Animate hero elements
+    const heroElements = document.querySelectorAll('.hero h1, .hero p, .search-container, .stat-item');
+    heroElements.forEach((el, index) => {
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 300 * index);
+    });
 
-// Animate category cards
-const cards = document.querySelectorAll('.category-card, .av-card, .pricing-card');
-cards.forEach((card, index) => {
-setTimeout(() => {
-card.style.opacity = '1';
-card.style.transform = 'translateY(0)';
-}, 400 + (index * 100));
-});
+    // Animate category cards
+    const cards = document.querySelectorAll('.category-card, .av-card, .pricing-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 400 + (index * 100));
+    });
 
-// Set initial styles for animation
-heroElements.forEach(el => {
-el.style.opacity = '0';
-el.style.transform = 'translateY(30px)';
-el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-});
+    // Set initial styles for animation
+    heroElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    });
 
-cards.forEach(card => {
-card.style.opacity = '0';
-card.style.transform = 'translateY(30px)';
-card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-});
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    });
 
-// Initialize search functionality
-initSearch();
+    // Initialize search functionality
+    initSearch();
+    
+    // Add smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
 
 // Search functionality
 function initSearch() {
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
-const resultsGrid = document.getElementById('resultsGrid');
-const noResults = document.getElementById('noResults');
-const toolsSection = document.getElementById('toolsSection');
-const avTools = document.querySelector('.av-tools');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const resultsGrid = document.getElementById('resultsGrid');
+    const noResults = document.getElementById('noResults');
+    const pdfToolsSection = document.getElementById('tools');
+    const avToolsSection = document.querySelector('.av-tools');
+    const pricingSection = document.getElementById('pricing');
+    const featuresSection = document.getElementById('features');
+    const ctaSection = document.querySelector('.cta');
+    const footer = document.getElementById('support');
 
-// All tools data
-const allTools = Array.from(document.querySelectorAll('.tool-item')).map(tool => {
-return {
-name: tool.getAttribute('data-tool'),
-icon: tool.querySelector('i').className,
-category: tool.closest('.category-card, .av-card') ?
-tool.closest('.category-card, .av-card').querySelector('h3').textContent :
-"Tools"
-};
-});
+    // Collect all tools
+    const allTools = Array.from(document.querySelectorAll('.tool-item')).map(tool => {
+        return {
+            name: tool.getAttribute('data-tool'),
+            icon: tool.querySelector('i').className,
+            category: tool.getAttribute('data-category')
+        };
+    });
 
-searchInput.addEventListener('input', function() {
-const searchTerm = this.value.trim().toLowerCase();
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
 
-if (searchTerm.length < 2) {
-searchResults.classList.remove('active');
-toolsSection.style.display = 'block';
-avTools.style.display = 'block';
-return;
-}
+        if (searchTerm.length < 2) {
+            searchResults.classList.remove('active');
+            pdfToolsSection.style.display = 'block';
+            avToolsSection.style.display = 'block';
+            pricingSection.style.display = 'block';
+            featuresSection.style.display = 'block';
+            ctaSection.style.display = 'block';
+            footer.style.display = 'block';
+            return;
+        }
 
-// Filter tools
-const filteredTools = allTools.filter(tool =>
-tool.name.toLowerCase().includes(searchTerm)
-);
+        // Filter tools
+        const filteredTools = allTools.filter(tool => 
+            tool.name.toLowerCase().includes(searchTerm) || 
+            tool.category.toLowerCase().includes(searchTerm)
+        );
 
-// Display results
-displayResults(filteredTools);
-});
+        // Display results
+        displayResults(filteredTools);
+    });
 
-function displayResults(tools) {
-// Show search results section
-searchResults.classList.add('active');
-toolsSection.style.display = 'none';
-avTools.style.display = 'none';
+    function displayResults(tools) {
+        // Show search results section
+        searchResults.classList.add('active');
+        pdfToolsSection.style.display = 'none';
+        avToolsSection.style.display = 'none';
+        pricingSection.style.display = 'none';
+        featuresSection.style.display = 'none';
+        ctaSection.style.display = 'none';
+        footer.style.display = 'none';
 
-// Clear previous results
-resultsGrid.innerHTML = '';
-noResults.style.display = 'none';
+        // Clear previous results
+        resultsGrid.innerHTML = '';
+        noResults.style.display = 'none';
 
-if (tools.length === 0) {
-noResults.style.display = 'block';
-return;
-}
+        if (tools.length === 0) {
+            noResults.style.display = 'block';
+            return;
+        }
 
-// Add tools to results grid
-tools.forEach(tool => {
-const toolCard = document.createElement('div');
-toolCard.className = 'result-card';
-toolCard.innerHTML = `
-<i class="${tool.icon}"></i>
-<div class="result-info">
-<h4>${tool.name}</h4>
-<p>${tool.category}</p>
-</div>
-`;
-resultsGrid.appendChild(toolCard);
-});
-}
+        // Add tools to results grid
+        tools.forEach(tool => {
+            const toolCard = document.createElement('div');
+            toolCard.className = 'result-card';
+            toolCard.innerHTML = `
+                <i class="${tool.icon}"></i>
+                <div class="result-info">
+                    <h4>${tool.name}</h4>
+                    <p>${tool.category}</p>
+                </div>
+            `;
+            resultsGrid.appendChild(toolCard);
+        });
+    }
 
-// Allow pressing Enter to search
-searchInput.addEventListener('keypress', function(e) {
-if (e.key === 'Enter') {
-this.blur();
-}
-});
+    // Allow pressing Enter to search
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            this.blur();
+        }
+    });
 }
 </script>
 </body>
