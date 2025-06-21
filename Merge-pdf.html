@@ -31,9 +31,8 @@
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
             min-height: 100vh;
-            padding-bottom: 100px;
+            padding-bottom: 40px;
         }
 
         /* Animated Background Elements */
@@ -216,6 +215,8 @@
             transition: all 0.3s;
             font-size: 16px;
             box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            display: inline-block;
+            text-decoration: none;
         }
         
         .cta-button:hover {
@@ -514,19 +515,37 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            border: none;
         }
         
         .action-btn.merge {
             background: var(--primary);
             color: white;
-            border: none;
             box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
         }
         
         .action-btn.merge:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 6px 10px rgba(37, 99, 235, 0.4);
+        }
+        
+        .action-btn.merge:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.8s;
+        }
+        
+        .action-btn.merge:hover:after {
+            left: 120%;
         }
         
         .action-btn.reset {
@@ -580,65 +599,81 @@
             box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
         }
         
-        /* Footer */
-        footer {
-            background: var(--dark);
+        /* Tool Button */
+        .tool-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
             color: white;
-            padding: 60px 0 30px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 25px 0;
+            box-shadow: 0 6px 15px rgba(139, 92, 246, 0.4);
+            transition: all 0.3s ease;
             position: relative;
-            padding-bottom: 10px;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
         }
         
-        .footer-col h3::after {
+        .tool-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
+        }
+        
+        .tool-button:after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 3px;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.8s;
         }
         
-        .footer-links {
-            list-style: none;
+        .tool-button:hover:after {
+            left: 120%;
         }
         
-        .footer-links li {
-            margin-bottom: 12px;
+        /* Stats Section */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
         }
         
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-        
-        .copyright {
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 200px;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-weight: 500;
         }
         
         /* Responsive Design */
@@ -664,6 +699,16 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            .tool-button {
+                padding: 14px 35px;
+                font-size: 16px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         
         @media (max-width: 480px) {
@@ -685,6 +730,11 @@
                 width: 100%;
                 justify-content: flex-end;
                 margin-top: 15px;
+            }
+            
+            .tool-button {
+                padding: 12px 30px;
+                font-size: 15px;
             }
         }
     </style>
@@ -726,12 +776,33 @@
             <div class="tool-hero-content">
                 <h1>Merge <span>PDF Files</span></h1>
                 <p>Combine multiple PDFs into a single document. Reorder pages and maintain original quality.</p>
+                
+                <!-- Prominent Use Tool Button -->
+                <button class="tool-button">
+                    <i class="fas fa-magic"></i> Use Tool Now
+                </button>
+                
+                <!-- Stats Section -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-number">5M+</div>
+                        <div class="stat-label">Users Worldwide</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Service Available</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Main Tool Container -->
-    <div class="container">
+    <div class="container" id="tool-container">
         <div class="tool-container">
             <!-- Upload Area -->
             <div class="upload-area" id="uploadArea">
@@ -799,55 +870,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>YourMultiTools.space</h3>
-                    <p>The world's leading PDF solution platform with over 5 million satisfied users worldwide.</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Products</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">PDF Organizer</a></li>
-                        <li><a href="#">PDF Converter</a></li>
-                        <li><a href="#">PDF Editor</a></li>
-                        <li><a href="#">PDF Security</a></li>
-                        <li><a href="#">PDF Scanner</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">API</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Press</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2025 YourMultiTools.space - World's #1 PDF Tools Website. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const uploadArea = document.getElementById('uploadArea');
@@ -858,6 +880,7 @@
             const resultSection = document.getElementById('resultSection');
             const downloadBtn = document.getElementById('downloadBtn');
             const optionCards = document.querySelectorAll('.option-card');
+            const toolButton = document.querySelector('.tool-button');
             
             // Sample files array to store uploaded files
             let uploadedFiles = [];
@@ -1071,7 +1094,14 @@
             // Download button functionality
             downloadBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                alert('In a real application, this would download your merged PDF file.');
+                alert('Your merged PDF would download now in a real application.');
+            });
+            
+            // Use Tool button scroll functionality
+            toolButton.addEventListener('click', function() {
+                document.getElementById('tool-container').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
             });
         });
     </script>
