@@ -8,951 +8,565 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
---primary: #4361ee;
---primary-dark: #3a0ca3;
---secondary: #4cc9f0;
---accent: #f72585;
---accent2: #ff6b35;
---light: #f8f9fa;
---dark: #0f172a;
---darker: #0a0f1d;
---gray: #6c757d;
---light-gray: #e9ecef;
---glass: rgba(255, 255, 255, 0.08);
---glass-border: rgba(255, 255, 255, 0.18);
---success: #4caf50;
---warning: #ff9800;
---danger: #f44336;
---transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
---shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
---shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.18);
---radius: 16px;
+  --primary: #4361ee;
+  --primary-dark: #3a0ca3;
+  --secondary: #4cc9f0;
+  --accent: #f72585;
+  --accent2: #ff6b35;
+  --light: #f8f9fa;
+  --dark: #0f172a;
+  --darker: #0a0f1d;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger: #f44336;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.18);
+  --radius: 16px;
 }
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-font-family: 'Poppins', sans-serif;
-background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-color: var(--light);
-line-height: 1.7;
-overflow-x: hidden;
-min-height: 100vh;
-position: relative;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+  color: var(--light);
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* Animated Background */
 .particles {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
 .particle {
-position: absolute;
-border-radius: 50%;
-background: rgba(67, 97, 238, 0.15);
-box-shadow: 0 0 20px rgba(67, 97, 238, 0.2);
-animation: float 15s infinite linear;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(67, 97, 238, 0.15);
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.2);
+  animation: float 15s infinite linear;
 }
 
 @keyframes float {
-0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-10% { opacity: 1; }
-90% { opacity: 1; }
-100% { transform: translateY(-100vh) translateX(100px) rotate(360deg); opacity: 0; }
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(100px) rotate(360deg); opacity: 0; }
 }
 
 /* Header Styles */
 header {
-background: rgba(15, 23, 42, 0.7);
-backdrop-filter: blur(12px);
-padding: 1.2rem 5%;
-position: sticky;
-top: 0;
-z-index: 1000;
-border-bottom: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 1.2rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .navbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1400px;
-margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .logo {
-display: flex;
-align-items: center;
-font-size: 1.8rem;
-font-weight: 700;
-color: white;
-text-decoration: none;
-font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .logo i {
-margin-right: 12px;
-background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-padding: 10px;
-border-radius: 12px;
-font-size: 1.4rem;
+  margin-right: 12px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 1.4rem;
 }
 
 .nav-links {
-display: flex;
-gap: 2.5rem;
+  display: flex;
+  gap: 2.5rem;
 }
 
 .nav-links a {
-color: rgba(255, 255, 255, 0.8);
-text-decoration: none;
-font-weight: 500;
-transition: var(--transition);
-position: relative;
-font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  font-size: 1.05rem;
 }
 
 .nav-links a:hover, .nav-links a.active {
-color: white;
+  color: white;
 }
 
 .nav-links a::after {
-content: '';
-position: absolute;
-bottom: -5px;
-left: 0;
-width: 0;
-height: 2px;
-background: var(--accent);
-transition: var(--transition);
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
 }
 
 .nav-links a:hover::after, .nav-links a.active::after {
-width: 100%;
+  width: 100%;
 }
 
 .auth-buttons {
-display: flex;
-gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .btn {
-padding: 0.7rem 1.8rem;
-border-radius: 12px;
-font-weight: 600;
-cursor: pointer;
-transition: var(--transition);
-border: none;
-font-family: 'Poppins', sans-serif;
-font-size: 1rem;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
+  padding: 0.7rem 1.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .btn-outline {
-background: transparent;
-border: 2px solid var(--primary);
-color: var(--primary);
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
 
 .btn-outline:hover {
-background: rgba(67, 97, 238, 0.15);
-transform: translateY(-3px);
+  background: rgba(67, 97, 238, 0.15);
+  transform: translateY(-3px);
 }
 
 .btn-primary {
-background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-color: white;
-border: 2px solid transparent;
-box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
 }
 
 .btn-primary:hover {
-background: linear-gradient(135deg, #3a56e0 0%, #e91e63 100%);
-transform: translateY(-3px);
-box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+  background: linear-gradient(135deg, #3a56e0 0%, #e91e63 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
 }
 
 /* Hero Section */
 .hero {
-padding: 7rem 5% 4rem;
-max-width: 1400px;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-position: relative;
+  padding: 7rem 5% 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 .hero h1 {
-font-size: 3.8rem;
-font-weight: 800;
-margin-bottom: 1.5rem;
-background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-line-height: 1.15;
-max-width: 900px;
-letter-spacing: -0.5px;
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+  max-width: 900px;
+  letter-spacing: -0.5px;
 }
 
 .hero p {
-font-size: 1.4rem;
-color: rgba(255, 255, 255, 0.8);
-max-width: 800px;
-margin-bottom: 2.5rem;
-font-weight: 300;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
 }
 
 .search-container {
-width: 100%;
-max-width: 700px;
-position: relative;
-margin-bottom: 3rem;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  margin-bottom: 3rem;
 }
 
 .search-container input {
-width: 100%;
-padding: 1.3rem 1.8rem;
-padding-left: 3.8rem;
-border-radius: 15px;
-border: 2px solid rgba(255, 255, 255, 0.1);
-font-size: 1.1rem;
-background: rgba(15, 23, 42, 0.5);
-color: white;
-transition: var(--transition);
-backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 1.3rem 1.8rem;
+  padding-left: 3.8rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem;
+  background: rgba(15, 23, 42, 0.5);
+  color: white;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
 }
 
 .search-container input:focus {
-outline: none;
-border-color: var(--primary);
-box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.2);
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.2);
 }
 
 .search-container input::placeholder {
-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .search-container i {
-position: absolute;
-left: 1.8rem;
-top: 50%;
-transform: translateY(-50%);
-color: var(--primary);
-font-size: 1.3rem;
+  position: absolute;
+  left: 1.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 1.3rem;
 }
 
 .stats {
-display: flex;
-gap: 3rem;
-margin-top: 1rem;
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
 }
 
 .stat-item {
-text-align: center;
+  text-align: center;
 }
 
 .stat-value {
-font-size: 2.5rem;
-font-weight: 700;
-background: linear-gradient(to right, var(--primary), var(--accent));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
-font-size: 1rem;
-color: rgba(255, 255, 255, 0.6);
-text-transform: uppercase;
-letter-spacing: 1px;
-margin-top: 0.5rem;
-}
-
-/* Tools Grid */
-.tools-section {
-padding: 2rem 5% 6rem;
-max-width: 1400px;
-margin: 0 auto;
-}
-
-.section-title {
-text-align: center;
-margin-bottom: 4rem;
-}
-
-.section-title h2 {
-font-size: 2.8rem;
-margin-bottom: 1rem;
-color: white;
-font-weight: 700;
-position: relative;
-display: inline-block;
-padding-bottom: 15px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  overflow: auto;
+  animation: fadeIn 0.3s ease;
 }
 
-.section-title h2::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-width: 80px;
-height: 4px;
-background: linear-gradient(to right, var(--primary), var(--accent));
-border-radius: 2px;
-}
-
-.section-title p {
-color: rgba(255, 255, 255, 0.7);
-max-width: 700px;
-margin: 1rem auto 0;
-font-size: 1.2rem;
-font-weight: 300;
-}
-
-.tools-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-gap: 2rem;
-}
-
-.category-card {
-background: rgba(15, 23, 42, 0.5);
-border-radius: var(--radius);
-overflow: hidden;
-box-shadow: var(--shadow);
-transition: var(--transition);
-border: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
-transform: translateY(0);
-}
-
-.category-card:hover {
-transform: translateY(-10px);
-box-shadow: var(--shadow-hover);
-border-color: rgba(67, 97, 238, 0.3);
-}
-
-.category-header {
-background: linear-gradient(135deg, rgba(67, 97, 238, 0.3) 0%, rgba(58, 12, 163, 0.3) 100%);
-color: white;
-padding: 1.8rem;
-display: flex;
-align-items: center;
-gap: 1.2rem;
-border-bottom: 1px solid var(--glass-border);
-}
-
-.category-header i {
-font-size: 2rem;
-background: rgba(255, 255, 255, 0.1);
-width: 60px;
-height: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 14px;
-}
-
-.category-header h3 {
-font-size: 1.5rem;
-font-weight: 600;
-letter-spacing: -0.5px;
-}
-
-.tools-list {
-padding: 1.8rem;
-}
-
-.tool-item {
-padding: 1rem 0;
-border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-display: flex;
-align-items: center;
-gap: 1.2rem;
-transition: var(--transition);
-cursor: pointer;
-text-decoration: none;
-color: inherit;
-}
-
-.tool-item:last-child {
-border-bottom: none;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.tool-item:hover {
-color: var(--secondary);
-transform: translateX(5px);
-}
-
-.tool-item i {
-color: var(--primary);
-font-size: 1.3rem;
-width: 30px;
-height: 30px;
-display: flex;
-align-items: center;
-justify-content: center;
-background: rgba(67, 97, 238, 0.15);
-border-radius: 8px;
-transition: var(--transition);
-}
-
-.tool-item:hover i {
-background: var(--primary);
-color: white;
-transform: scale(1.1);
-}
-
-/* Audio/Video Tools */
-.av-tools {
-background: linear-gradient(135deg, rgba(58, 12, 163, 0.4) 0%, rgba(67, 97, 238, 0.4) 100%);
-padding: 6rem 5%;
-margin-top: 3rem;
-border-top: 1px solid var(--glass-border);
-border-bottom: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
-}
-
-.av-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-gap: 2rem;
-max-width: 1400px;
-margin: 0 auto;
-}
-
-.av-card {
-background: rgba(255, 255, 255, 0.08);
-border-radius: var(--radius);
-overflow: hidden;
-box-shadow: var(--shadow);
-transition: var(--transition);
-border: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
-transform: translateY(0);
-}
-
-.av-card:hover {
-transform: translateY(-10px);
-box-shadow: var(--shadow-hover);
-border-color: rgba(247, 37, 133, 0.3);
+.modal-content {
+  background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+  margin: 8% auto;
+  padding: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: slideDown 0.4s ease;
 }
-
-.av-header {
-background: linear-gradient(135deg, rgba(247, 37, 133, 0.3) 0%, rgba(255, 107, 53, 0.3) 100%);
-color: white;
-padding: 1.8rem;
-display: flex;
-align-items: center;
-gap: 1.2rem;
-border-bottom: 1px solid var(--glass-border);
-}
-
-.av-header i {
-font-size: 2rem;
-background: rgba(255, 255, 255, 0.1);
-width: 60px;
-height: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 14px;
-}
-
-.av-header h3 {
-font-size: 1.5rem;
-font-weight: 600;
-letter-spacing: -0.5px;
-}
-
-.av-list {
-padding: 1.8rem;
-}
-
-/* Pricing Section */
-.pricing {
-padding: 6rem 5%;
-background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 29, 0.9) 100%);
-border-top: 1px solid var(--glass-border);
-border-bottom: 1px solid var(--glass-border);
-}
-
-.pricing-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 2.5rem;
-max-width: 1200px;
-margin: 0 auto;
-}
-
-.pricing-card {
-background: rgba(255, 255, 255, 0.05);
-border-radius: var(--radius);
-overflow: hidden;
-box-shadow: var(--shadow);
-transition: var(--transition);
-border: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
-position: relative;
-transform: translateY(0);
-text-align: center;
-}
-
-.pricing-card.featured {
-transform: scale(1.05);
-border-color: var(--accent);
-z-index: 2;
-}
-
-.pricing-card.featured::before {
-content: 'POPULAR';
-position: absolute;
-top: 15px;
-right: -30px;
-background: var(--accent);
-color: white;
-padding: 0.5rem 2rem;
-font-size: 0.8rem;
-font-weight: 600;
-transform: rotate(45deg);
-width: 150px;
-text-align: center;
-}
-
-.pricing-card:hover {
-transform: translateY(-10px);
-box-shadow: var(--shadow-hover);
-}
-
-.pricing-header {
-padding: 2.5rem 2rem;
-background: rgba(67, 97, 238, 0.1);
-border-bottom: 1px solid var(--glass-border);
-}
-
-.pricing-card.featured .pricing-header {
-background: linear-gradient(135deg, rgba(67, 97, 238, 0.2) 0%, rgba(247, 37, 133, 0.2) 100%);
-}
-
-.pricing-header h3 {
-font-size: 1.8rem;
-margin-bottom: 1rem;
-color: white;
-}
-
-.price {
-font-size: 3.5rem;
-font-weight: 700;
-margin-bottom: 0.5rem;
-background: linear-gradient(to right, var(--primary), var(--accent));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-
-.price span {
-font-size: 1rem;
-font-weight: 400;
-color: rgba(255, 255, 255, 0.7);
-}
-
-.pricing-features {
-padding: 2rem;
-}
-
-.feature-item {
-padding: 1rem 0;
-border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-}
-
-.feature-item:last-child {
-border-bottom: none;
-}
 
-.feature-item i {
-color: var(--primary);
-font-size: 1.2rem;
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-.pricing-footer {
-padding: 0 2rem 2.5rem;
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 28px;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-/* Features Section */
-.features {
-padding: 6rem 5%;
-background: linear-gradient(135deg, rgba(58, 12, 163, 0.4) 0%, rgba(67, 97, 238, 0.4) 100%);
-margin-top: 3rem;
-border-top: 1px solid var(--glass-border);
-border-bottom: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
+.close-modal:hover {
+  color: var(--accent);
+  transform: rotate(90deg);
 }
 
-.features-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 2.5rem;
-max-width: 1400px;
-margin: 0 auto;
+.modal-header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.feature-card {
-background: rgba(255, 255, 255, 0.08);
-padding: 2.5rem;
-border-radius: var(--radius);
-text-align: center;
-border: 1px solid var(--glass-border);
-transition: var(--transition);
-backdrop-filter: blur(10px);
+.modal-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.feature-card:hover {
-transform: translateY(-8px);
-background: rgba(255, 255, 255, 0.12);
-box-shadow: var(--shadow);
+.modal-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
 }
 
-.feature-card i {
-font-size: 3.5rem;
-margin-bottom: 1.8rem;
-color: var(--secondary);
-background: rgba(76, 201, 240, 0.15);
-width: 90px;
-height: 90px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 50%;
-margin: 0 auto 1.8rem;
+.tab-container {
+  display: flex;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--glass-border);
 }
 
-.feature-card h3 {
-font-size: 1.6rem;
-margin-bottom: 1.2rem;
-color: white;
+.tab-btn {
+  flex: 1;
+  padding: 15px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
 }
 
-.feature-card p {
-color: rgba(255, 255, 255, 0.8);
-font-weight: 300;
+.tab-btn.active {
+  color: white;
 }
 
-/* CTA Section */
-.cta {
-padding: 6rem 5%;
-text-align: center;
-max-width: 900px;
-margin: 0 auto;
-position: relative;
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
 }
 
-.cta-content {
-background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
-padding: 4rem;
-border-radius: var(--radius);
-border: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
-box-shadow: var(--shadow);
+.tab-content {
+  display: none;
 }
 
-.cta h2 {
-font-size: 2.8rem;
-margin-bottom: 1.5rem;
-color: white;
-font-weight: 700;
+.tab-content.active {
+  display: block;
 }
 
-.cta p {
-color: rgba(255, 255, 255, 0.8);
-font-size: 1.3rem;
-margin-bottom: 2.5rem;
-font-weight: 300;
+.form-group {
+  margin-bottom: 20px;
 }
 
-.btn-lg {
-padding: 1.1rem 3rem;
-font-size: 1.2rem;
-border-radius: 14px;
-font-weight: 600;
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* Footer */
-footer {
-background: rgba(15, 23, 42, 0.9);
-color: white;
-padding: 5rem 5% 2rem;
-border-top: 1px solid var(--glass-border);
+.form-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.4);
+  color: white;
+  font-size: 1rem;
+  transition: var(--transition);
 }
 
-.footer-content {
-max-width: 1400px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 3rem;
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
 
-.footer-column h3 {
-font-size: 1.4rem;
-margin-bottom: 1.8rem;
-position: relative;
-padding-bottom: 0.8rem;
-font-weight: 600;
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
 }
 
-.footer-column h3::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 50px;
-height: 3px;
-background: var(--accent);
+.checkbox-group input {
+  margin-right: 10px;
+  width: auto;
 }
 
-.footer-links {
-list-style: none;
+.checkbox-group label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.footer-links li {
-margin-bottom: 1rem;
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-.footer-links a {
-color: rgba(255, 255, 255, 0.7);
-text-decoration: none;
-transition: var(--transition);
-display: flex;
-align-items: center;
-gap: 0.8rem;
-font-weight: 300;
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
 }
 
-.footer-links a:hover {
-color: var(--secondary);
-transform: translateX(5px);
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--glass-border);
 }
 
-.footer-links a i {
-font-size: 0.8rem;
-color: var(--accent);
-transition: var(--transition);
+.divider span {
+  padding: 0 15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
 }
 
-.footer-links a:hover i {
-transform: translateX(3px);
+.social-login {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-.copyright {
-text-align: center;
-padding-top: 3rem;
-color: rgba(255, 255, 255, 0.5);
-font-size: 0.95rem;
-max-width: 1400px;
-margin: 3rem auto 0;
-border-top: 1px solid rgba(255, 255, 255, 0.08);
-padding: 2rem 0 0;
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.4);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-/* Search Results */
-.search-results {
-max-width: 1400px;
-margin: 0 auto 4rem;
-padding: 0 5%;
-display: none;
+.social-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.search-results.active {
-display: block;
-}
-
-.results-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-gap: 1.5rem;
-}
-
-.result-card {
-background: rgba(15, 23, 42, 0.5);
-border-radius: var(--radius);
-padding: 1.5rem;
-display: flex;
-align-items: center;
-gap: 1rem;
-border: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
-transition: var(--transition);
-cursor: pointer;
-text-decoration: none;
-color: inherit;
-}
-
-.result-card:hover {
-transform: translateY(-5px);
-border-color: var(--primary);
-}
-
-.result-card i {
-font-size: 1.8rem;
-color: var(--primary);
-background: rgba(67, 97, 238, 0.15);
-width: 60px;
-height: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 14px;
-}
+.social-btn.google { background: rgba(219, 68, 55, 0.15); }
+.social-btn.facebook { background: rgba(59, 89, 152, 0.15); }
+.social-btn.instagram { background: rgba(225, 48, 108, 0.15); }
+.social-btn.twitter { background: rgba(29, 161, 242, 0.15); }
 
-.result-info h4 {
-font-size: 1.3rem;
-margin-bottom: 0.3rem;
-}
-
-.result-info p {
-color: rgba(255, 255, 255, 0.6);
-font-size: 0.9rem;
-}
+.social-btn.google:hover { background: rgba(219, 68, 55, 0.25); }
+.social-btn.facebook:hover { background: rgba(59, 89, 152, 0.25); }
+.social-btn.instagram:hover { background: rgba(225, 48, 108, 0.25); }
+.social-btn.twitter:hover { background: rgba(29, 161, 242, 0.25); }
 
-.no-results {
-text-align: center;
-padding: 3rem;
-background: rgba(15, 23, 42, 0.5);
-border-radius: var(--radius);
-border: 1px solid var(--glass-border);
-backdrop-filter: blur(10px);
+.modal-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
 }
 
-.no-results i {
-font-size: 4rem;
-color: var(--primary);
-margin-bottom: 1.5rem;
+.modal-footer a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
-.no-results h3 {
-font-size: 1.8rem;
-margin-bottom: 1rem;
+.modal-footer a:hover {
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 /* Responsive Design */
-@media (max-width: 1100px) {
-.hero h1 {
-font-size: 3.2rem;
-}
-}
-
-@media (max-width: 900px) {
-.navbar {
-flex-direction: column;
-gap: 1.5rem;
-}
-
-.nav-links {
-gap: 1.5rem;
-flex-wrap: wrap;
-justify-content: center;
-}
-
-.hero {
-padding: 5rem 5% 3rem;
-}
-
-.hero h1 {
-font-size: 2.8rem;
-}
-
-.section-title h2 {
-font-size: 2.3rem;
-}
-
-.tools-grid {
-grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.pricing-card.featured {
-transform: scale(1);
-}
-}
-
 @media (max-width: 768px) {
-.hero h1 {
-font-size: 2.5rem;
-}
-
-.hero p {
-font-size: 1.2rem;
-}
-
-.stats {
-flex-wrap: wrap;
-justify-content: center;
-gap: 2rem;
-}
-
-.section-title h2 {
-font-size: 2rem;
-}
-
-.cta h2 {
-font-size: 2.3rem;
-}
-
-.cta p {
-font-size: 1.1rem;
-}
-
-.cta-content {
-padding: 3rem 2rem;
-}
+  .modal-content {
+    padding: 30px 20px;
+    margin: 15% auto;
+  }
+  
+  .social-login {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 576px) {
-.hero h1 {
-font-size: 2.2rem;
-}
-
-.section-title h2 {
-font-size: 1.8rem;
-}
-
-.nav-links {
-gap: 1rem;
-font-size: 0.9rem;
-}
-
-.btn {
-padding: 0.6rem 1.2rem;
-font-size: 0.9rem;
-}
-
-.category-header {
-padding: 1.5rem;
-flex-direction: column;
-text-align: center;
-gap: 1rem;
-}
-
-.category-header i {
-margin: 0 auto;
-}
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .tab-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
 }
 </style>
 </head>
@@ -962,668 +576,353 @@ margin: 0 auto;
 
 <!-- Header -->
 <header>
-<nav class="navbar">
-<a href="#" class="logo">
-<i class="fas fa-tools"></i>
-yourmultitools.space
-</a>
-<div class="nav-links">
-<a href="#" class="active">Home</a>
-<a href="#tools">Tools</a>
-<a href="#pricing">Pricing</a>
-<a href="#features">Features</a>
-<a href="#support">Support</a>
-</div>
-<div class="auth-buttons">
-<button class="btn btn-outline">Login</button>
-<button class="btn btn-primary">Sign Up</button>
-</div>
-</nav>
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <i class="fas fa-tools"></i>
+      yourmultitools.space
+    </a>
+    <div class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#features">Features</a>
+      <a href="#support">Support</a>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-outline" id="loginBtn">Login</button>
+      <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+    </div>
+  </nav>
 </header>
 
 <!-- Hero Section -->
 <section class="hero">
-<h1>All-in-One File Conversion & Compression</h1>
-<p>PDF, Audio, and Video tools for professionals - compress, convert, and manage files effortlessly</p>
-
-<div class="search-container">
-<i class="fas fa-search"></i>
-<input type="text" id="searchInput" placeholder="Search for a tool...">
-</div>
-
-<div class="stats">
-<div class="stat-item">
-<div class="stat-value">70+</div>
-<div class="stat-label">Tools</div>
-</div>
-<div class="stat-item">
-<div class="stat-value">99%</div>
-<div class="stat-label">Satisfaction</div>
-</div>
-<div class="stat-item">
-<div class="stat-value">750K+</div>
-<div class="stat-label">Users</div>
-</div>
-</div>
+  <h1>All-in-One File Conversion & Compression</h1>
+  <p>PDF, Audio, and Video tools for professionals - compress, convert, and manage files effortlessly</p>
+  
+  <div class="search-container">
+    <i class="fas fa-search"></i>
+    <input type="text" id="searchInput" placeholder="Search for a tool...">
+  </div>
+  
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-value">70+</div>
+      <div class="stat-label">Tools</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">99%</div>
+      <div class="stat-label">Satisfaction</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">750K+</div>
+      <div class="stat-label">Users</div>
+    </div>
+  </div>
 </section>
 
-<!-- Search Results Section -->
-<section class="search-results" id="searchResults">
-<div class="section-title">
-<h2>Search Results</h2>
-<p>Tools matching your search query</p>
+<!-- Login/Signup Modal -->
+<div class="modal" id="authModal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeModal">&times;</span>
+    
+    <div class="modal-header">
+      <h2>Welcome Back!</h2>
+      <p>Access your account to unlock premium features</p>
+    </div>
+    
+    <div class="tab-container">
+      <button class="tab-btn active" data-tab="login">Login</button>
+      <button class="tab-btn" data-tab="signup">Sign Up</button>
+    </div>
+    
+    <!-- Login Form -->
+    <div class="tab-content active" id="loginContent">
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-submit">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+      </form>
+      
+      <div class="divider">
+        <span>Or continue with</span>
+      </div>
+      
+      <div class="social-login">
+        <button class="social-btn google">
+          <i class="fab fa-google"></i> Google
+        </button>
+        <button class="social-btn facebook">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </button>
+        <button class="social-btn instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </button>
+        <button class="social-btn twitter">
+          <i class="fab fa-twitter"></i> X (Twitter)
+        </button>
+      </div>
+      
+      <div class="modal-footer">
+        <p>Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+        <p><a href="#">Forgot your password?</a></p>
+      </div>
+    </div>
+    
+    <!-- Signup Form -->
+    <div class="tab-content" id="signupContent">
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="signupEmail">Email Address</label>
+          <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" placeholder="Create a password" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="signupConfirm">Confirm Password</label>
+          <input type="password" id="signupConfirm" placeholder="Confirm your password" required>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-submit">
+          <i class="fas fa-user-plus"></i> Create Account
+        </button>
+      </form>
+      
+      <div class="divider">
+        <span>Or sign up with</span>
+      </div>
+      
+      <div class="social-login">
+        <button class="social-btn google">
+          <i class="fab fa-google"></i> Google
+        </button>
+        <button class="social-btn facebook">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </button>
+        <button class="social-btn instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </button>
+        <button class="social-btn twitter">
+          <i class="fab fa-twitter"></i> X (Twitter)
+        </button>
+      </div>
+      
+      <div class="modal-footer">
+        <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="results-grid" id="resultsGrid">
-<!-- Results will be populated here by JavaScript -->
-</div>
-<div class="no-results" id="noResults" style="display: none;">
-<i class="fas fa-search"></i>
-<h3>No Tools Found</h3>
-<p>Try a different search term or browse our categories below</p>
-</div>
-</section>
-
-<!-- Tools Grid -->
-<section class="tools-section" id="tools">
-<div class="section-title">
-<h2>Premium PDF Tools</h2>
-<p>Access our comprehensive suite of professional PDF management tools</p>
-</div>
-
-<div class="tools-grid">
-<!-- Organize PDF Card -->
-<div class="category-card">
-<div class="category-header">
-<i class="fas fa-folder-open"></i>
-<h3>ORGANIZE PDF</h3>
-</div>
-<div class="tools-list">
-<a href="pdf-merge.html" class="tool-item" data-tool="Merge PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-object-group"></i>
-<span>Merge PDF</span>
-</a>
-<a href="pdf-compress.html" class="tool-item" data-tool="Compress PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-compress-alt"></i>
-<span>Compress PDF</span>
-</a>
-<a href="jpg-to-pdf.html" class="tool-item" data-tool="JPG to PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-file-image"></i>
-<span>JPG to PDF</span>
-</a>
-<a href="pdf-to-jpg.html" class="tool-item" data-tool="PDF to JPG" data-category="PDF Tools" target="_blank">
-<i class="fas fa-image"></i>
-<span>PDF to JPG</span>
-</a>
-<a href="pdf-rotate.html" class="tool-item" data-tool="Rotate PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-sync-alt"></i>
-<span>Rotate PDF</span>
-</a>
-<a href="pdf-unlock.html" class="tool-item" data-tool="Unlock PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-unlock"></i>
-<span>Unlock PDF</span>
-</a>
-</div>
-</div>
-
-<!-- Convert to PDF Card -->
-<div class="category-card">
-<div class="category-header">
-<i class="fas fa-exchange-alt"></i>
-<h3>CONVERT TO PDF</h3>
-</div>
-<div class="tools-list">
-<a href="pdf-split.html" class="tool-item" data-tool="Split PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-cut"></i>
-<span>Split PDF</span>
-</a>
-<a href="pdf-repair.html" class="tool-item" data-tool="Repair PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-wrench"></i>
-<span>Repair PDF</span>
-</a>
-<a href="word-to-pdf.html" class="tool-item" data-tool="WORD to PDF" data-category="PDF Tools" target="_blank">
-<i class="fab fa-microsoft"></i>
-<span>WORD to PDF</span>
-</a>
-<a href="pdf-to-word.html" class="tool-item" data-tool="PDF to WORD" data-category="PDF Tools" target="_blank">
-<i class="fas fa-file-word"></i>
-<span>PDF to WORD</span>
-</a>
-<a href="pdf-page-numbers.html" class="tool-item" data-tool="Add page numbers" data-category="PDF Tools" target="_blank">
-<i class="fas fa-list-ol"></i>
-<span>Add page numbers</span>
-</a>
-<a href="pdf-protect.html" class="tool-item" data-tool="Protect PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-shield-alt"></i>
-<span>Protect PDF</span>
-</a>
-</div>
-</div>
-
-<!-- Extract From PDF Card -->
-<div class="category-card">
-<div class="category-header">
-<i class="fas fa-file-export"></i>
-<h3>EXTRACT FROM PDF</h3>
-</div>
-<div class="tools-list">
-<a href="pdf-extract.html" class="tool-item" data-tool="Extract pages" data-category="PDF Tools" target="_blank">
-<i class="fas fa-copy"></i>
-<span>Extract pages</span>
-</a>
-<a href="excel-to-pdf.html" class="tool-item" data-tool="EXCEL to PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-file-excel"></i>
-<span>EXCEL to PDF</span>
-</a>
-<a href="pdf-to-excel.html" class="tool-item" data-tool="PDF to EXCEL" data-category="PDF Tools" target="_blank">
-<i class="far fa-file-excel"></i>
-<span>PDF to EXCEL</span>
-</a>
-<a href="pdf-delete.html" class="tool-item" data-tool="Delete PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-trash-alt"></i>
-<span>Delete PDF</span>
-</a>
-<a href="pdf-redact.html" class="tool-item" data-tool="Redact PDF" data-category="PDF Tools" target="_blank">
-<i class="fas fa-eye-slash"></i>
-<span>Redact PDF</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Audio/Video Tools Section -->
-<section class="av-tools">
-<div class="section-title">
-<h2>Audio & Video Tools</h2>
-<p>Compress, convert and enhance your audio and video files</p>
-</div>
-
-<div class="av-grid">
-<!-- Audio Tools Card -->
-<div class="av-card">
-<div class="av-header">
-<i class="fas fa-music"></i>
-<h3>AUDIO TOOLS</h3>
-</div>
-<div class="av-list">
-<a href="audio-compress.html" class="tool-item" data-tool="Compress Audio" data-category="Audio Tools" target="_blank">
-<i class="fas fa-file-audio"></i>
-<span>Compress Audio</span>
-</a>
-<a href="audio-convert.html" class="tool-item" data-tool="Convert Audio" data-category="Audio Tools" target="_blank">
-<i class="fas fa-exchange-alt"></i>
-<span>Convert Audio</span>
-</a>
-<a href="audio-extract.html" class="tool-item" data-tool="Extract Audio" data-category="Audio Tools" target="_blank">
-<i class="fas fa-cut"></i>
-<span>Extract Audio</span>
-</a>
-<a href="audio-merge.html" class="tool-item" data-tool="Merge Audio" data-category="Audio Tools" target="_blank">
-<i class="fas fa-object-group"></i>
-<span>Merge Audio</span>
-</a>
-<a href="audio-trim.html" class="tool-item" data-tool="Trim Audio" data-category="Audio Tools" target="_blank">
-<i class="fas fa-sliders-h"></i>
-<span>Trim Audio</span>
-</a>
-<a href="audio-to-text.html" class="tool-item" data-tool="Audio to Text" data-category="Audio Tools" target="_blank">
-<i class="fas fa-font"></i>
-<span>Audio to Text</span>
-</a>
-</div>
-</div>
-
-<!-- Video Tools Card -->
-<div class="av-card">
-<div class="av-header">
-<i class="fas fa-video"></i>
-<h3>VIDEO TOOLS</h3>
-</div>
-<div class="av-list">
-<a href="video-compress.html" class="tool-item" data-tool="Compress Video" data-category="Video Tools" target="_blank">
-<i class="fas fa-file-video"></i>
-<span>Compress Video</span>
-</a>
-<a href="video-convert.html" class="tool-item" data-tool="Convert Video" data-category="Video Tools" target="_blank">
-<i class="fas fa-exchange-alt"></i>
-<span>Convert Video</span>
-</a>
-<a href="audio-from-video.html" class="tool-item" data-tool="Extract Audio from Video" data-category="Video Tools" target="_blank">
-<i class="fas fa-headphones"></i>
-<span>Extract Audio from Video</span>
-</a>
-<a href="video-merge.html" class="tool-item" data-tool="Merge Video" data-category="Video Tools" target="_blank">
-<i class="fas fa-object-group"></i>
-<span>Merge Video</span>
-</a>
-<a href="video-trim.html" class="tool-item" data-tool="Trim Video" data-category="Video Tools" target="_blank">
-<i class="fas fa-cut"></i>
-<span>Trim Video</span>
-</a>
-<a href="video-to-gif.html" class="tool-item" data-tool="Video to GIF" data-category="Video Tools" target="_blank">
-<i class="fas fa-film"></i>
-<span>Video to GIF</span>
-</a>
-</div>
-</div>
-
-<!-- Compression Tools Card -->
-<div class="av-card">
-<div class="av-header">
-<i class="fas fa-file-archive"></i>
-<h3>COMPRESSION TOOLS</h3>
-</div>
-<div class="av-list">
-<a href="image-compress.html" class="tool-item" data-tool="Image Compressor" data-category="Compression Tools" target="_blank">
-<i class="fas fa-file-image"></i>
-<span>Image Compressor</span>
-</a>
-<a href="bulk-compress.html" class="tool-item" data-tool="Bulk File Compressor" data-category="Compression Tools" target="_blank">
-<i class="fas fa-file-archive"></i>
-<span>Bulk File Compressor</span>
-</a>
-<a href="lossless-compress.html" class="tool-item" data-tool="Lossless Compression" data-category="Compression Tools" target="_blank">
-<i class="fas fa-file-contract"></i>
-<span>Lossless Compression</span>
-</a>
-<a href="lossy-compress.html" class="tool-item" data-tool="Lossy Compression" data-category="Compression Tools" target="_blank">
-<i class="fas fa-file-export"></i>
-<span>Lossy Compression</span>
-</a>
-<a href="video-compressor.html" class="tool-item" data-tool="Video Compressor" data-category="Compression Tools" target="_blank">
-<i class="fas fa-video"></i>
-<span>Video Compressor</span>
-</a>
-<a href="audio-compressor.html" class="tool-item" data-tool="Audio Compressor" data-category="Compression Tools" target="_blank">
-<i class="fas fa-music"></i>
-<span>Audio Compressor</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Pricing Section -->
-<section class="pricing" id="pricing">
-<div class="section-title">
-<h2>Simple, Transparent Pricing</h2>
-<p>Choose the perfect plan for your needs with our flexible pricing options</p>
-</div>
-
-<div class="pricing-grid">
-<!-- Free Plan -->
-<div class="pricing-card">
-<div class="pricing-header">
-<h3>Free</h3>
-<div class="price">$0<span>/month</span></div>
-<p>Perfect for individuals getting started</p>
-</div>
-<div class="pricing-features">
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Up to 10 file conversions per month</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Basic PDF tools</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>50MB max file size</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Standard processing speed</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-times-circle"></i>
-<span>No priority support</span>
-</div>
-</div>
-<div class="pricing-footer">
-<button class="btn btn-outline">Get Started</button>
-</div>
-</div>
-
-<!-- Pro Plan -->
-<div class="pricing-card featured">
-<div class="pricing-header">
-<h3>Professional</h3>
-<div class="price">$12<span>/month</span></div>
-<p>Best for professionals and small teams</p>
-</div>
-<div class="pricing-features">
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Unlimited file conversions</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>All PDF, Audio & Video tools</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>1GB max file size</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Faster processing speed</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Priority support</span>
-</div>
-</div>
-<div class="pricing-footer">
-<button class="btn btn-primary">Get Started</button>
-</div>
-</div>
-
-<!-- Enterprise Plan -->
-<div class="pricing-card">
-<div class="pricing-header">
-<h3>Enterprise</h3>
-<div class="price">$39<span>/month</span></div>
-<p>For large teams and organizations</p>
-</div>
-<div class="pricing-features">
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Unlimited file conversions</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>All tools + API access</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>10GB max file size</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>Maximum processing speed</span>
-</div>
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-<span>24/7 dedicated support</span>
-</div>
-</div>
-<div class="pricing-footer">
-<button class="btn btn-outline">Contact Sales</button>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Features Section -->
-<section class="features" id="features">
-<div class="section-title">
-<h2>Why Professionals Choose Us</h2>
-<p>Experience the difference with our enterprise-grade solutions</p>
-</div>
-
-<div class="features-grid">
-<div class="feature-card">
-<i class="fas fa-bolt"></i>
-<h3>Lightning Fast</h3>
-<p>Process large files in seconds with our optimized cloud infrastructure</p>
-</div>
-<div class="feature-card">
-<i class="fas fa-lock"></i>
-<h3>Military-Grade Security</h3>
-<p>End-to-end encryption and automatic file deletion for your privacy</p>
-</div>
-<div class="feature-card">
-<i class="fas fa-cloud"></i>
-<h3>Cloud Integration</h3>
-<p>Connect with Dropbox, Google Drive, and OneDrive seamlessly</p>
-</div>
-<div class="feature-card">
-<i class="fas fa-infinity"></i>
-<h3>No Limits</h3>
-<p>Unlimited file processing with no watermarks or restrictions</p>
-</div>
-</div>
-</section>
-
-<!-- CTA Section -->
-<section class="cta">
-<div class="cta-content">
-<h2>Transform Your File Management Workflow</h2>
-<p>Join thousands of professionals who trust our tools for their critical operations</p>
-<button class="btn btn-primary btn-lg">
-<i class="fas fa-rocket"></i>
-Get Started Now
-</button>
-</div>
-</section>
-
-<!-- Footer -->
-<footer id="support">
-<div class="footer-content">
-<div class="footer-column">
-<h3>Your Multi Tools</h3>
-<p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 1.8rem;">Premium solutions for professionals and businesses worldwide.</p>
-<div style="display: flex; gap: 1.2rem;">
-<a href="https://facebook.com/yourmultitools" target="_blank" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-facebook"></i></a>
-<a href="https://twitter.com/yourmultitools" target="_blank" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-twitter"></i></a>
-<a href="https://instagram.com/yourmultitools" target="_blank" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-instagram"></i></a>
-<a href="https://linkedin.com/company/yourmultitools" target="_blank" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-linkedin"></i></a>
-</div>
-</div>
-
-<div class="footer-column">
-<h3>Quick Links</h3>
-<ul class="footer-links">
-<li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-<li><a href="#tools"><i class="fas fa-chevron-right"></i> PDF Tools</a></li>
-<li><a href="#tools"><i class="fas fa-chevron-right"></i> Audio Tools</a></li>
-<li><a href="#tools"><i class="fas fa-chevron-right"></i> Video Tools</a></li>
-<li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
-</ul>
-</div>
-
-<div class="footer-column">
-<h3>Popular Tools</h3>
-<ul class="footer-links">
-<li><a href="pdf-compress.html" target="_blank"><i class="fas fa-chevron-right"></i> PDF Compressor</a></li>
-<li><a href="video-compress.html" target="_blank"><i class="fas fa-chevron-right"></i> Video Compressor</a></li>
-<li><a href="audio-compress.html" target="_blank"><i class="fas fa-chevron-right"></i> Audio Compressor</a></li>
-<li><a href="file-converter.html" target="_blank"><i class="fas fa-chevron-right"></i> File Converter</a></li>
-<li><a href="document-editor.html" target="_blank"><i class="fas fa-chevron-right"></i> Document Editor</a></li>
-</ul>
-</div>
-
-<div class="footer-column">
-<h3>Contact Us</h3>
-<ul class="footer-links">
-<li><a href="mailto:support@yourmultitools.space"><i class="fas fa-envelope"></i> support@yourmultitools.space</a></li>
-<li><a href="tel:+15551234567"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
-<li><a href="https://maps.google.com/?q=San+Francisco,+CA" target="_blank"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a></li>
-</ul>
-</div>
-</div>
-
-<div class="copyright">
-<p>&copy; 2023 yourmultitools.space. All rights reserved. | Premium Solutions for Professionals</p>
-</div>
-</footer>
 
 <script>
 // Create animated particles
 function createParticles() {
-    const container = document.getElementById('particles');
-    const particleCount = 30;
+  const container = document.getElementById('particles');
+  const particleCount = 30;
 
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
 
-        // Random size (10px to 50px)
-        const size = Math.random() * 40 + 10;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
+    // Random size (10px to 50px)
+    const size = Math.random() * 40 + 10;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
 
-        // Random position
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100 + 100;
-        particle.style.left = `${posX}%`;
-        particle.style.top = `${posY}%`;
+    // Random position
+    const posX = Math.random() * 100;
+    const posY = Math.random() * 100 + 100;
+    particle.style.left = `${posX}%`;
+    particle.style.top = `${posY}%`;
 
-        // Random animation duration (10s to 25s)
-        const duration = Math.random() * 15 + 10;
-        particle.style.animationDuration = `${duration}s`;
+    // Random animation duration (10s to 25s)
+    const duration = Math.random() * 15 + 10;
+    particle.style.animationDuration = `${duration}s`;
 
-        // Random delay
-        const delay = Math.random() * 5;
-        particle.style.animationDelay = `${delay}s`;
+    // Random delay
+    const delay = Math.random() * 5;
+    particle.style.animationDelay = `${delay}s`;
 
-        container.appendChild(particle);
-    }
+    container.appendChild(particle);
+  }
 }
 
-// Initialize animations and search functionality
+// Modal functionality
 document.addEventListener('DOMContentLoaded', function() {
-    createParticles();
-
-    // Animate hero elements
-    const heroElements = document.querySelectorAll('.hero h1, .hero p, .search-container, .stat-item');
-    heroElements.forEach((el, index) => {
-        setTimeout(() => {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }, 300 * index);
-    });
-
-    // Animate category cards
-    const cards = document.querySelectorAll('.category-card, .av-card, .pricing-card');
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 400 + (index * 100));
-    });
-
-    // Set initial styles for animation
-    heroElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    });
-
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    });
-
-    // Initialize search functionality
-    initSearch();
-    
-    // Add smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
-
-// Search functionality
-function initSearch() {
-    const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
-    const resultsGrid = document.getElementById('resultsGrid');
-    const noResults = document.getElementById('noResults');
-    const pdfToolsSection = document.getElementById('tools');
-    const avToolsSection = document.querySelector('.av-tools');
-    const pricingSection = document.getElementById('pricing');
-    const featuresSection = document.getElementById('features');
-    const ctaSection = document.querySelector('.cta');
-    const footer = document.getElementById('support');
-
-    // Collect all tools
-    const allTools = Array.from(document.querySelectorAll('.tool-item')).map(tool => {
-        return {
-            name: tool.getAttribute('data-tool'),
-            icon: tool.querySelector('i').className,
-            category: tool.getAttribute('data-category'),
-            href: tool.getAttribute('href')
-        };
-    });
-
-    searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.trim().toLowerCase();
-
-        if (searchTerm.length < 2) {
-            searchResults.classList.remove('active');
-            pdfToolsSection.style.display = 'block';
-            avToolsSection.style.display = 'block';
-            pricingSection.style.display = 'block';
-            featuresSection.style.display = 'block';
-            ctaSection.style.display = 'block';
-            footer.style.display = 'block';
-            return;
-        }
-
-        // Filter tools
-        const filteredTools = allTools.filter(tool => 
-            tool.name.toLowerCase().includes(searchTerm) || 
-            tool.category.toLowerCase().includes(searchTerm)
-        );
-
-        // Display results
-        displayResults(filteredTools);
-    });
-
-    function displayResults(tools) {
-        // Show search results section
-        searchResults.classList.add('active');
-        pdfToolsSection.style.display = 'none';
-        avToolsSection.style.display = 'none';
-        pricingSection.style.display = 'none';
-        featuresSection.style.display = 'none';
-        ctaSection.style.display = 'none';
-        footer.style.display = 'none';
-
-        // Clear previous results
-        resultsGrid.innerHTML = '';
-        noResults.style.display = 'none';
-
-        if (tools.length === 0) {
-            noResults.style.display = 'block';
-            return;
-        }
-
-        // Add tools to results grid
-        tools.forEach(tool => {
-            const toolCard = document.createElement('a');
-            toolCard.className = 'result-card';
-            toolCard.href = tool.href || '#';
-            toolCard.target = '_blank';
-            toolCard.innerHTML = `
-                <i class="${tool.icon}"></i>
-                <div class="result-info">
-                    <h4>${tool.name}</h4>
-                    <p>${tool.category}</p>
-                </div>
-            `;
-            resultsGrid.appendChild(toolCard);
-        });
+  createParticles();
+  
+  const modal = document.getElementById('authModal');
+  const loginBtn = document.getElementById('loginBtn');
+  const signupBtn = document.getElementById('signupBtn');
+  const closeModal = document.getElementById('closeModal');
+  const switchToSignup = document.getElementById('switchToSignup');
+  const switchToLogin = document.getElementById('switchToLogin');
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+  
+  // Open modal for login
+  loginBtn.addEventListener('click', function() {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    switchTab('login');
+  });
+  
+  // Open modal for signup
+  signupBtn.addEventListener('click', function() {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    switchTab('signup');
+  });
+  
+  // Close modal
+  closeModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+  
+  // Close modal when clicking outside
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
-
-    // Allow pressing Enter to search
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            this.blur();
-        }
+  });
+  
+  // Switch to signup tab
+  switchToSignup.addEventListener('click', function(e) {
+    e.preventDefault();
+    switchTab('signup');
+  });
+  
+  // Switch to login tab
+  switchToLogin.addEventListener('click', function(e) {
+    e.preventDefault();
+    switchTab('login');
+  });
+  
+  // Tab switching
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const tabId = this.getAttribute('data-tab');
+      switchTab(tabId);
     });
-}
+  });
+  
+  // Form submission
+  loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    
+    // In a real app, you would validate and send to server
+    console.log('Login attempt with:', email, password);
+    alert('Login functionality would connect to your backend. Demo only.');
+    
+    // Close modal after login
+    setTimeout(() => {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }, 1000);
+  });
+  
+  signupForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('signupName').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+    const confirmPassword = document.getElementById('signupConfirm').value;
+    
+    if (password !== confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+    }
+    
+    // In a real app, you would validate and send to server
+    console.log('Signup attempt with:', name, email, password);
+    alert('Signup functionality would connect to your backend. Demo only.');
+    
+    // Close modal after signup
+    setTimeout(() => {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }, 1000);
+  });
+  
+  // Social login buttons
+  document.querySelectorAll('.social-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const platform = this.classList[1];
+      alert(`This would initiate ${platform} OAuth authentication. Demo only.`);
+    });
+  });
+  
+  // Function to switch tabs
+  function switchTab(tabId) {
+    // Update active tab button
+    tabBtns.forEach(btn => {
+      if (btn.getAttribute('data-tab') === tabId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    
+    // Show active content
+    document.querySelectorAll('.tab-content').forEach(content => {
+      if (content.id === `${tabId}Content`) {
+        content.classList.add('active');
+      } else {
+        content.classList.remove('active');
+      }
+    });
+  }
+  
+  // Animate hero elements
+  const heroElements = document.querySelectorAll('.hero h1, .hero p, .search-container, .stat-item');
+  heroElements.forEach((el, index) => {
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 300 * index);
+  });
+  
+  // Set initial styles for animation
+  heroElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  });
+});
 </script>
 </body>
 </html>
