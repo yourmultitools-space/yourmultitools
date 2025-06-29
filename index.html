@@ -33,9 +33,9 @@
 
 /* Light Mode Color Scheme */
 body.light-mode {
-  --light: #0f172a; /* Dark text for light mode */
-  --dark: #f8f9fa; /* Light background */
-  --darker: #ffffff; /* Even lighter background */
+  --light: #0f172a;
+  --dark: #f8f9fa;
+  --darker: #ffffff;
   --gray: #495057;
   --light-gray: #dee2e6;
   --text-muted: rgba(15, 23, 42, 0.7);
@@ -69,7 +69,7 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Animated Background (Only visible in dark mode) */
+/* Animated Background */
 .particles {
   position: fixed;
   top: 0;
@@ -138,7 +138,7 @@ body.light-mode header {
   padding: 10px;
   border-radius: 12px;
   font-size: 1.4rem;
-  color: white; /* Icon color should always be white on gradient */
+  color: white;
 }
 
 .nav-links {
@@ -197,7 +197,6 @@ body.light-mode header {
 #theme-toggle .fa-sun { display: none; }
 body.light-mode #theme-toggle .fa-sun { display: block; }
 body.light-mode #theme-toggle .fa-moon { display: none; }
-
 
 section[id] {
     scroll-margin-top: 100px;
@@ -295,6 +294,8 @@ section[id] {
 .tool-item {
   border-bottom: 1px solid var(--glass-border);
   color: var(--light);
+  text-decoration: none;
+  display: block;
 }
 .tool-item:hover {
   color: var(--secondary);
@@ -352,6 +353,7 @@ body.light-mode footer {
 
 .footer-links a {
   color: var(--text-muted);
+  text-decoration: none;
 }
 .footer-links a:hover {
   color: var(--secondary);
@@ -359,6 +361,8 @@ body.light-mode footer {
 .copyright {
   color: var(--text-muted);
   border-top: 1px solid var(--glass-border);
+  padding-top: 2rem;
+  margin-top: 3rem;
 }
 
 .result-card {
@@ -369,62 +373,388 @@ body.light-mode footer {
 }
 
 
-/* --- Other Unchanged Styles from original file --- */
-.hero { padding: 7rem 5% 4rem; max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
-.search-container { width: 100%; max-width: 700px; position: relative; margin-bottom: 3rem; }
-.search-container i { position: absolute; left: 1.8rem; top: 50%; transform: translateY(-50%); color: var(--primary); font-size: 1.3rem; }
-.stats { display: flex; gap: 3rem; margin-top: 1rem; }
-.stat-item { text-align: center; }
-.stat-value { font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.tools-section { padding: 2rem 5% 6rem; max-width: 1400px; margin: 0 auto; }
-.section-title { text-align: center; margin-bottom: 4rem; }
-.section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(to right, var(--primary), var(--accent)); border-radius: 2px; }
-.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-.category-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: rgba(67, 97, 238, 0.3); }
-.category-header i { font-size: 2rem; background: rgba(255, 255, 255, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 14px; }
-.category-header h3 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.5px; }
-.tools-list { padding: 1.8rem; }
-.tool-item { padding: 1rem 0; display: flex; align-items: center; gap: 1.2rem; transition: var(--transition); cursor: pointer; text-decoration: none; }
-.tool-item:last-child { border-bottom: none; }
-.tool-item:hover { transform: translateX(5px); }
-.tool-item i { color: var(--primary); font-size: 1.3rem; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: rgba(67, 97, 238, 0.15); border-radius: 8px; transition: var(--transition); }
-.tool-item:hover i { background: var(--primary); color: white; transform: scale(1.1); }
-.av-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto; }
-.av-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
-.av-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: rgba(247, 37, 133, 0.3); }
-.av-header { padding: 1.8rem; display: flex; align-items: center; gap: 1.2rem; border-bottom: 1px solid var(--glass-border); }
-.av-header i { font-size: 2rem; background: rgba(255, 255, 255, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 14px; }
-.av-header h3 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.5px; }
-.av-list { padding: 1.8rem; }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; max-width: 1400px; margin: 0 auto; }
-.feature-card { padding: 2.5rem; border-radius: var(--radius); text-align: center; transition: var(--transition); }
-.feature-card:hover { transform: translateY(-8px); background: rgba(255, 255, 255, 0.12); box-shadow: var(--shadow); }
-.feature-card i { font-size: 3.5rem; margin-bottom: 1.8rem; color: var(--secondary); background: rgba(76, 201, 240, 0.15); width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: 0 auto 1.8rem; }
-.footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; }
-.footer-column h3 { font-size: 1.4rem; margin-bottom: 1.8rem; position: relative; padding-bottom: 0.8rem; font-weight: 600; }
-.footer-column h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--accent); }
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 1rem; }
-.footer-links a { text-decoration: none; transition: var(--transition); display: flex; align-items: center; gap: 0.8rem; font-weight: 300; }
-.footer-links a i { font-size: 0.8rem; color: var(--accent); transition: var(--transition); }
-.footer-links a:hover i { transform: translateX(3px); }
-.copyright { text-align: center; padding-top: 3rem; font-size: 0.95rem; max-width: 1400px; margin: 3rem auto 0; padding: 2rem 0 0; }
-.search-results { max-width: 1400px; margin: 0 auto 4rem; padding: 0 5%; display: none; }
-.search-results.active { display: block; }
-.results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-.result-card { border-radius: var(--radius); padding: 1.5rem; display: flex; align-items: center; gap: 1rem; transition: var(--transition); cursor: pointer; text-decoration: none; }
-.result-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-.result-card i { font-size: 1.8rem; color: var(--primary); background: rgba(67, 97, 238, 0.15); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 14px; }
-.result-info h4 { font-size: 1.3rem; margin-bottom: 0.3rem; }
-.no-results { text-align: center; padding: 3rem; border-radius: var(--radius); }
-.no-results i { font-size: 4rem; color: var(--primary); margin-bottom: 1.5rem; }
-.no-results h3 { font-size: 1.8rem; margin-bottom: 1rem; }
-@media (max-width: 1100px) { .hero h1 { font-size: 3.2rem; } }
-@media (max-width: 900px) { .navbar { flex-direction: column; gap: 1.5rem; } .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; } .hero { padding: 5rem 5% 3rem; } .hero h1 { font-size: 2.8rem; } .section-title h2 { font-size: 2.3rem; } .tools-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } }
-@media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.2rem; } .stats { flex-wrap: wrap; justify-content: center; gap: 2rem; } .section-title h2 { font-size: 2rem; } .footer-content { text-align: center; } .footer-column h3::after { left: 50%; transform: translateX(-50%); } }
-@media (max-width: 576px) { .hero h1 { font-size: 2.2rem; } .section-title h2 { font-size: 1.8rem; } .nav-links { gap: 1rem; font-size: 0.9rem; } .category-header { padding: 1.5rem; flex-direction: column; text-align: center; gap: 1rem; } .category-header i { margin: 0 auto; } }
+/* --- Other Styles --- */
+.hero { 
+  padding: 7rem 5% 4rem; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  position: relative; 
+}
+.search-container { 
+  width: 100%; 
+  max-width: 700px; 
+  position: relative; 
+  margin-bottom: 3rem; 
+}
+.search-container i { 
+  position: absolute; 
+  left: 1.8rem; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  color: var(--primary); 
+  font-size: 1.3rem; 
+}
+.stats { 
+  display: flex; 
+  gap: 3rem; 
+  margin-top: 1rem; 
+}
+.stat-item { 
+  text-align: center; 
+}
+.stat-value { 
+  font-size: 2.5rem; 
+  font-weight: 700; 
+  background: linear-gradient(to right, var(--primary), var(--accent)); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+.reveal { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+.reveal.visible { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
+.tools-section { 
+  padding: 2rem 5% 6rem; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
+.section-title { 
+  text-align: center; 
+  margin-bottom: 4rem; 
+}
+.section-title h2::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 80px; 
+  height: 4px; 
+  background: linear-gradient(to right, var(--primary), var(--accent)); 
+  border-radius: 2px; 
+}
+.tools-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  gap: 2rem; 
+}
+.category-card:hover { 
+  transform: translateY(-10px); 
+  box-shadow: var(--shadow-hover); 
+  border-color: rgba(67, 97, 238, 0.3); 
+}
+.category-header i { 
+  font-size: 2rem; 
+  background: rgba(255, 255, 255, 0.1); 
+  width: 60px; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 14px; 
+}
+.category-header h3 { 
+  font-size: 1.5rem; 
+  font-weight: 600; 
+  letter-spacing: -0.5px; 
+}
+.tools-list { 
+  padding: 1.8rem; 
+}
+.tool-item { 
+  padding: 1rem 0; 
+  display: flex; 
+  align-items: center; 
+  gap: 1.2rem; 
+  transition: var(--transition); 
+  cursor: pointer; 
+}
+.tool-item:last-child { 
+  border-bottom: none; 
+}
+.tool-item:hover { 
+  transform: translateX(5px); 
+}
+.tool-item i { 
+  color: var(--primary); 
+  font-size: 1.3rem; 
+  width: 30px; 
+  height: 30px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: rgba(67, 97, 238, 0.15); 
+  border-radius: 8px; 
+  transition: var(--transition); 
+}
+.tool-item:hover i { 
+  background: var(--primary); 
+  color: white; 
+  transform: scale(1.1); 
+}
+.av-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  gap: 2rem; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
+.av-card { 
+  border-radius: var(--radius); 
+  overflow: hidden; 
+  box-shadow: var(--shadow); 
+  transition: var(--transition); 
+}
+.av-card:hover { 
+  transform: translateY(-10px); 
+  box-shadow: var(--shadow-hover); 
+  border-color: rgba(247, 37, 133, 0.3); 
+}
+.av-header { 
+  padding: 1.8rem; 
+  display: flex; 
+  align-items: center; 
+  gap: 1.2rem; 
+  border-bottom: 1px solid var(--glass-border); 
+}
+.av-header i { 
+  font-size: 2rem; 
+  background: rgba(255, 255, 255, 0.1); 
+  width: 60px; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 14px; 
+}
+.av-header h3 { 
+  font-size: 1.5rem; 
+  font-weight: 600; 
+  letter-spacing: -0.5px; 
+}
+.av-list { 
+  padding: 1.8rem; 
+}
+.features-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 2.5rem; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
+.feature-card { 
+  padding: 2.5rem; 
+  border-radius: var(--radius); 
+  text-align: center; 
+  transition: var(--transition); 
+}
+.feature-card:hover { 
+  transform: translateY(-8px); 
+  background: rgba(255, 255, 255, 0.12); 
+  box-shadow: var(--shadow); 
+}
+.feature-card i { 
+  font-size: 3.5rem; 
+  margin-bottom: 1.8rem; 
+  color: var(--secondary); 
+  background: rgba(76, 201, 240, 0.15); 
+  width: 90px; 
+  height: 90px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 50%; 
+  margin: 0 auto 1.8rem; 
+}
+.footer-content { 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 3rem; 
+}
+.footer-column h3 { 
+  font-size: 1.4rem; 
+  margin-bottom: 1.8rem; 
+  position: relative; 
+  padding-bottom: 0.8rem; 
+  font-weight: 600; 
+}
+.footer-column h3::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 50px; 
+  height: 3px; 
+  background: var(--accent); 
+}
+.footer-links { 
+  list-style: none; 
+}
+.footer-links li { 
+  margin-bottom: 1rem; 
+}
+.footer-links a { 
+  text-decoration: none; 
+  transition: var(--transition); 
+  display: flex; 
+  align-items: center; 
+  gap: 0.8rem; 
+  font-weight: 300; 
+}
+.footer-links a i { 
+  font-size: 0.8rem; 
+  color: var(--accent); 
+  transition: var(--transition); 
+}
+.footer-links a:hover i { 
+  transform: translateX(3px); 
+}
+.copyright { 
+  text-align: center; 
+  font-size: 0.95rem; 
+  max-width: 1400px; 
+  margin: 3rem auto 0; 
+}
+.search-results { 
+  max-width: 1400px; 
+  margin: 0 auto 4rem; 
+  padding: 0 5%; 
+  display: none; 
+}
+.search-results.active { 
+  display: block; 
+}
+.results-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 1.5rem; 
+}
+.result-card { 
+  border-radius: var(--radius); 
+  padding: 1.5rem; 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+  transition: var(--transition); 
+  cursor: pointer; 
+  text-decoration: none; 
+}
+.result-card:hover { 
+  transform: translateY(-5px); 
+  border-color: var(--primary); 
+}
+.result-card i { 
+  font-size: 1.8rem; 
+  color: var(--primary); 
+  background: rgba(67, 97, 238, 0.15); 
+  width: 60px; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 14px; 
+}
+.result-info h4 { 
+  font-size: 1.3rem; 
+  margin-bottom: 0.3rem; 
+}
+.no-results { 
+  text-align: center; 
+  padding: 3rem; 
+  border-radius: var(--radius); 
+}
+.no-results i { 
+  font-size: 4rem; 
+  color: var(--primary); 
+  margin-bottom: 1.5rem; 
+}
+.no-results h3 { 
+  font-size: 1.8rem; 
+  margin-bottom: 1rem; 
+}
+@media (max-width: 1100px) { 
+  .hero h1 { 
+    font-size: 3.2rem; 
+  } 
+}
+@media (max-width: 900px) { 
+  .navbar { 
+    flex-direction: column; 
+    gap: 1.5rem; 
+  } 
+  .nav-links { 
+    gap: 1.5rem; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  } 
+  .hero { 
+    padding: 5rem 5% 3rem; 
+  } 
+  .hero h1 { 
+    font-size: 2.8rem; 
+  } 
+  .section-title h2 { 
+    font-size: 2.3rem; 
+  } 
+  .tools-grid { 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  } 
+}
+@media (max-width: 768px) { 
+  .hero h1 { 
+    font-size: 2.5rem; 
+  } 
+  .hero p { 
+    font-size: 1.2rem; 
+  } 
+  .stats { 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 2rem; 
+  } 
+  .section-title h2 { 
+    font-size: 2rem; 
+  } 
+  .footer-content { 
+    text-align: center; 
+  } 
+  .footer-column h3::after { 
+    left: 50%; 
+    transform: translateX(-50%); 
+  } 
+}
+@media (max-width: 576px) { 
+  .hero h1 { 
+    font-size: 2.2rem; 
+  } 
+  .section-title h2 { 
+    font-size: 1.8rem; 
+  } 
+  .nav-links { 
+    gap: 1rem; 
+    font-size: 0.9rem; 
+  } 
+  .category-header { 
+    padding: 1.5rem; 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 1rem; 
+  } 
+  .category-header i { 
+    margin: 0 auto; 
+  } 
+}
 
 </style>
 </head>
@@ -441,6 +771,7 @@ body.light-mode footer {
         <div class="nav-links">
             <a href="#home" class="active">Home</a>
             <a href="#tools">Tools</a>
+            <a href="#av-tools">Audio & Video</a>
             <a href="#features">Features</a>
             <a href="#support">Support</a>
             <button id="theme-toggle" title="Toggle dark/light mode">
@@ -454,43 +785,311 @@ body.light-mode footer {
 <section class="hero reveal" id="home">
     <h1>All-in-One File Conversion & Compression</h1>
     <p>PDF, Audio, and Video tools for professionals - compress, convert, and manage files effortlessly</p>
-    <div class="search-container"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Search for a tool (e.g., 'merge pdf', 'video')..."></div>
-    <div class="stats"><div class="stat-item"><div class="stat-value">70+</div><div class="stat-label">Tools</div></div><div class="stat-item"><div class="stat-value">99%</div><div class="stat-label">Satisfaction</div></div><div class="stat-item"><div class="stat-value">750K+</div><div class="stat-label">Users</div></div></div>
+    <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search for a tool (e.g., 'merge pdf', 'video')...">
+    </div>
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-value">70+</div>
+            <div class="stat-label">Tools</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">99%</div>
+            <div class="stat-label">Satisfaction</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">750K+</div>
+            <div class="stat-label">Users</div>
+        </div>
+    </div>
 </section>
-<section class="search-results" id="searchResults"><div class="section-title reveal"><h2>Search Results</h2></div><div class="results-grid" id="resultsGrid"></div><div class="no-results" id="noResults" style="display: none;"><i class="fas fa-search"></i><h3>No Tools Found</h3><p>Try a different search term or browse our categories below</p></div></section>
+<section class="search-results" id="searchResults">
+    <div class="section-title reveal">
+        <h2>Search Results</h2>
+    </div>
+    <div class="results-grid" id="resultsGrid"></div>
+    <div class="no-results" id="noResults" style="display: none;">
+        <i class="fas fa-search"></i>
+        <h3>No Tools Found</h3>
+        <p>Try a different search term or browse our categories below</p>
+    </div>
+</section>
 <section class="tools-section" id="tools">
-    <div class="section-title reveal"><h2>Premium PDF Tools</h2><p>Access our comprehensive suite of professional PDF management tools</p></div>
+    <div class="section-title reveal">
+        <h2>Premium PDF Tools</h2>
+        <p>Access our comprehensive suite of professional PDF management tools</p>
+    </div>
     <div class="tools-grid">
-        <div class="category-card reveal"><div class="category-header"><i class="fas fa-folder-open"></i><h3>ORGANIZE PDF</h3></div><div class="tools-list"><a href="merge-pdf.html" class="tool-item" data-tool="Merge PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-object-group"></i><span>Merge PDF</span></a><a href="" class="tool-item" data-tool="Compress PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-compress-alt"></i><span>Compress PDF</span></a><a href="jpg-to-pdf.html" class="tool-item" data-tool="JPG to PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-image"></i><span>JPG to PDF</span></a><a href="pdf-to-jpg.html" class="tool-item" data-tool="PDF to JPG" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-image"></i><span>PDF to JPG</span></a><a href="pdf-rotate.html" class="tool-item" data-tool="Rotate PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-sync-alt"></i><span>Rotate PDF</span></a><a href="pdf-unlock.html" class="tool-item" data-tool="Unlock PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-unlock"></i><span>Unlock PDF</span></a></div></div>
-        <div class="category-card reveal"><div class="category-header"><i class="fas fa-exchange-alt"></i><h3>CONVERT TO PDF</h3></div><div class="tools-list"><a href="pdf-split.html" class="tool-item" data-tool="Split PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-cut"></i><span>Split PDF</span></a><a href="pdf-repair.html" class="toolcompress-pdf.html-item" data-tool="Repair PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-wrench"></i><span>Repair PDF</span></a><a href="word-to-pdf.html" class="tool-item" data-tool="WORD to PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fab fa-microsoft"></i><span>WORD to PDF</span></a><a href="pdf-to-word.html" class="tool-item" data-tool="PDF to WORD" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-word"></i><span>PDF to WORD</span></a><a href="pdf-page-numbers.html" class="tool-item" data-tool="Add page numbers" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-list-ol"></i><span>Add page numbers</span></a><a href="pdf-protect.html" class="tool-item" data-tool="Protect PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-shield-alt"></i><span>Protect PDF</span></a></div></div>
-        <div class="category-card reveal"><div class="category-header"><i class="fas fa-file-export"></i><h3>EXTRACT FROM PDF</h3></div><div class="tools-list"><a href="pdf-extract.html" class="tool-item" data-tool="Extract pages" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-copy"></i><span>Extract pages</span></a><a href="excel-to-pdf.html" class="tool-item" data-tool="EXCEL to PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-excel"></i><span>EXCEL to PDF</span></a><a href="pdf-to-excel.html" class="tool-item" data-tool="PDF to EXCEL" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="far fa-file-excel"></i><span>PDF to EXCEL</span></a><a href="pdf-delete.html" class="tool-item" data-tool="Delete PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-trash-alt"></i><span>Delete PDF</span></a><a href="pdf-redact.html" class="tool-item" data-tool="Redact PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye-slash"></i><span>Redact PDF</span></a></div></div>
+        <div class="category-card reveal">
+            <div class="category-header">
+                <i class="fas fa-folder-open"></i>
+                <h3>ORGANIZE PDF</h3>
+            </div>
+            <div class="tools-list">
+                <a href="merge-pdf.html" class="tool-item" data-tool="Merge PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-object-group"></i>
+                    <span>Merge PDF</span>
+                </a>
+                <a href="compress-pdf.html" class="tool-item" data-tool="Compress PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-compress-alt"></i>
+                    <span>Compress PDF</span>
+                </a>
+                <a href="jpg-to-pdf.html" class="tool-item" data-tool="JPG to PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-image"></i>
+                    <span>JPG to PDF</span>
+                </a>
+                <a href="pdf-to-jpg.html" class="tool-item" data-tool="PDF to JPG" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-image"></i>
+                    <span>PDF to JPG</span>
+                </a>
+                <a href="pdf-rotate.html" class="tool-item" data-tool="Rotate PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Rotate PDF</span>
+                </a>
+                <a href="pdf-unlock.html" class="tool-item" data-tool="Unlock PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-unlock"></i>
+                    <span>Unlock PDF</span>
+                </a>
+            </div>
+        </div>
+        <div class="category-card reveal">
+            <div class="category-header">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>CONVERT TO PDF</h3>
+            </div>
+            <div class="tools-list">
+                <a href="pdf-split.html" class="tool-item" data-tool="Split PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-cut"></i>
+                    <span>Split PDF</span>
+                </a>
+                <a href="pdf-repair.html" class="tool-item" data-tool="Repair PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-wrench"></i>
+                    <span>Repair PDF</span>
+                </a>
+                <a href="word-to-pdf.html" class="tool-item" data-tool="WORD to PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-microsoft"></i>
+                    <span>WORD to PDF</span>
+                </a>
+                <a href="pdf-to-word.html" class="tool-item" data-tool="PDF to WORD" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-word"></i>
+                    <span>PDF to WORD</span>
+                </a>
+                <a href="pdf-page-numbers.html" class="tool-item" data-tool="Add page numbers" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-list-ol"></i>
+                    <span>Add page numbers</span>
+                </a>
+                <a href="pdf-protect.html" class="tool-item" data-tool="Protect PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Protect PDF</span>
+                </a>
+            </div>
+        </div>
+        <div class="category-card reveal">
+            <div class="category-header">
+                <i class="fas fa-file-export"></i>
+                <h3>EXTRACT FROM PDF</h3>
+            </div>
+            <div class="tools-list">
+                <a href="pdf-extract.html" class="tool-item" data-tool="Extract pages" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-copy"></i>
+                    <span>Extract pages</span>
+                </a>
+                <a href="excel-to-pdf.html" class="tool-item" data-tool="EXCEL to PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-excel"></i>
+                    <span>EXCEL to PDF</span>
+                </a>
+                <a href="pdf-to-excel.html" class="tool-item" data-tool="PDF to EXCEL" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="far fa-file-excel"></i>
+                    <span>PDF to EXCEL</span>
+                </a>
+                <a href="pdf-delete.html" class="tool-item" data-tool="Delete PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-trash-alt"></i>
+                    <span>Delete PDF</span>
+                </a>
+                <a href="pdf-redact.html" class="tool-item" data-tool="Redact PDF" data-category="PDF Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-eye-slash"></i>
+                    <span>Redact PDF</span>
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 <section class="av-tools" id="av-tools">
-    <div class="section-title reveal"><h2>Audio & Video Tools</h2><p>Compress, convert and enhance your audio and video files</p></div>
+    <div class="section-title reveal">
+        <h2>Audio & Video Tools</h2>
+        <p>Compress, convert and enhance your audio and video files</p>
+    </div>
     <div class="av-grid">
-        <div class="av-card reveal"><div class="av-header"><i class="fas fa-music"></i><h3>AUDIO TOOLS</h3></div><div class="av-list"><a href="audio-compress.html" class="tool-item" data-tool="Compress Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-audio"></i><span>Compress Audio</span></a><a href="audio-convert.html" class="tool-item" data-tool="Convert Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-exchange-alt"></i><span>Convert Audio</span></a><a href="audio-extract.html" class="tool-item" data-tool="Extract Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-cut"></i><span>Extract Audio</span></a><a href="audio-merge.html" class="tool-item" data-tool="Merge Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-object-group"></i><span>Merge Audio</span></a><a href="audio-trim.html" class="tool-item" data-tool="Trim Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-sliders-h"></i><span>Trim Audio</span></a><a href="audio-to-text.html" class="tool-item" data-tool="Audio to Text" data-category="Audio Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-font"></i><span>Audio to Text</span></a></div></div>
-        <div class="av-card reveal"><div class="av-header"><i class="fas fa-video"></i><h3>VIDEO TOOLS</h3></div><div class="av-list"><a href="video-compress.html" class="tool-item" data-tool="Compress Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-video"></i><span>Compress Video</span></a><a href="video-convert.html" class="tool-item" data-tool="Convert Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-exchange-alt"></i><span>Convert Video</span></a><a href="audio-from-video.html" class="tool-item" data-tool="Extract Audio from Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-headphones"></i><span>Extract Audio from Video</span></a><a href="video-merge.html" class="tool-item" data-tool="Merge Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-object-group"></i><span>Merge Video</span></a><a href="video-trim.html" class="tool-item" data-tool="Trim Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-cut"></i><span>Trim Video</span></a><a href="video-to-gif.html" class="tool-item" data-tool="Video to GIF" data-category="Video Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-film"></i><span>Video to GIF</span></a></div></div>
-        <div class="av-card reveal"><div class="av-header"><i class="fas fa-file-archive"></i><h3>COMPRESSION TOOLS</h3></div><div class="av-list"><a href="image-compress.html" class="tool-item" data-tool="Image Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-image"></i><span>Image Compressor</span></a><a href="bulk-compress.html" class="tool-item" data-tool="Bulk File Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-archive"></i><span>Bulk File Compressor</span></a><a href="lossless-compress.html" class="tool-item" data-tool="Lossless Compression" data-category="Compression Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-contract"></i><span>Lossless Compression</span></a><a href="lossy-compress.html" class="tool-item" data-tool="Lossy Compression" data-category="Compression Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-export"></i><span>Lossy Compression</span></a><a href="video-compressor.html" class="tool-item" data-tool="Video Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-video"></i><span>Video Compressor</span></a><a href="audio-compressor.html" class="tool-item" data-tool="Audio Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer"><i class="fas fa-music"></i><span>Audio Compressor</span></a></div></div>
+        <div class="av-card reveal">
+            <div class="av-header">
+                <i class="fas fa-music"></i>
+                <h3>AUDIO TOOLS</h3>
+            </div>
+            <div class="av-list">
+                <a href="audio-compress.html" class="tool-item" data-tool="Compress Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-audio"></i>
+                    <span>Compress Audio</span>
+                </a>
+                <a href="audio-convert.html" class="tool-item" data-tool="Convert Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Convert Audio</span>
+                </a>
+                <a href="audio-extract.html" class="tool-item" data-tool="Extract Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-cut"></i>
+                    <span>Extract Audio</span>
+                </a>
+                <a href="audio-merge.html" class="tool-item" data-tool="Merge Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-object-group"></i>
+                    <span>Merge Audio</span>
+                </a>
+                <a href="audio-trim.html" class="tool-item" data-tool="Trim Audio" data-category="Audio Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Trim Audio</span>
+                </a>
+                <a href="audio-to-text.html" class="tool-item" data-tool="Audio to Text" data-category="Audio Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-font"></i>
+                    <span>Audio to Text</span>
+                </a>
+            </div>
+        </div>
+        <div class="av-card reveal">
+            <div class="av-header">
+                <i class="fas fa-video"></i>
+                <h3>VIDEO TOOLS</h3>
+            </div>
+            <div class="av-list">
+                <a href="video-compress.html" class="tool-item" data-tool="Compress Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-video"></i>
+                    <span>Compress Video</span>
+                </a>
+                <a href="video-convert.html" class="tool-item" data-tool="Convert Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Convert Video</span>
+                </a>
+                <a href="audio-from-video.html" class="tool-item" data-tool="Extract Audio from Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-headphones"></i>
+                    <span>Extract Audio from Video</span>
+                </a>
+                <a href="video-merge.html" class="tool-item" data-tool="Merge Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-object-group"></i>
+                    <span>Merge Video</span>
+                </a>
+                <a href="video-trim.html" class="tool-item" data-tool="Trim Video" data-category="Video Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-cut"></i>
+                    <span>Trim Video</span>
+                </a>
+                <a href="video-to-gif.html" class="tool-item" data-tool="Video to GIF" data-category="Video Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-film"></i>
+                    <span>Video to GIF</span>
+                </a>
+            </div>
+        </div>
+        <div class="av-card reveal">
+            <div class="av-header">
+                <i class="fas fa-file-archive"></i>
+                <h3>COMPRESSION TOOLS</h3>
+            </div>
+            <div class="av-list">
+                <a href="image-compress.html" class="tool-item" data-tool="Image Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-image"></i>
+                    <span>Image Compressor</span>
+                </a>
+                <a href="bulk-compress.html" class="tool-item" data-tool="Bulk File Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-archive"></i>
+                    <span>Bulk File Compressor</span>
+                </a>
+                <a href="lossless-compress.html" class="tool-item" data-tool="Lossless Compression" data-category="Compression Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Lossless Compression</span>
+                </a>
+                <a href="lossy-compress.html" class="tool-item" data-tool="Lossy Compression" data-category="Compression Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-export"></i>
+                    <span>Lossy Compression</span>
+                </a>
+                <a href="video-compressor.html" class="tool-item" data-tool="Video Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-video"></i>
+                    <span>Video Compressor</span>
+                </a>
+                <a href="audio-compressor.html" class="tool-item" data-tool="Audio Compressor" data-category="Compression Tools" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-music"></i>
+                    <span>Audio Compressor</span>
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 <section class="features" id="features">
-    <div class="section-title reveal"><h2>Why Professionals Choose Us</h2><p>Experience the difference with our enterprise-grade solutions</p></div>
+    <div class="section-title reveal">
+        <h2>Why Professionals Choose Us</h2>
+        <p>Experience the difference with our enterprise-grade solutions</p>
+    </div>
     <div class="features-grid">
-        <div class="feature-card reveal"><i class="fas fa-bolt"></i><h3>Lightning Fast</h3><p>Process large files in seconds with our optimized cloud infrastructure</p></div>
-        <div class="feature-card reveal"><i class="fas fa-lock"></i><h3>Military-Grade Security</h3><p>End-to-end encryption and automatic file deletion for your privacy</p></div>
-        <div class="feature-card reveal"><i class="fas fa-cloud"></i><h3>Cloud Integration</h3><p>Connect with Dropbox, Google Drive, and OneDrive seamlessly</p></div>
-        <div class="feature-card reveal"><i class="fas fa-infinity"></i><h3>No Limits</h3><p>Unlimited file processing with no watermarks or restrictions</p></div>
+        <div class="feature-card reveal">
+            <i class="fas fa-bolt"></i>
+            <h3>Lightning Fast</h3>
+            <p>Process large files in seconds with our optimized cloud infrastructure</p>
+        </div>
+        <div class="feature-card reveal">
+            <i class="fas fa-lock"></i>
+            <h3>Military-Grade Security</h3>
+            <p>End-to-end encryption and automatic file deletion for your privacy</p>
+        </div>
+        <div class="feature-card reveal">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Integration</h3>
+            <p>Connect with Dropbox, Google Drive, and OneDrive seamlessly</p>
+        </div>
+        <div class="feature-card reveal">
+            <i class="fas fa-infinity"></i>
+            <h3>No Limits</h3>
+            <p>Unlimited file processing with no watermarks or restrictions</p>
+        </div>
     </div>
 </section>
 <footer id="support">
     <div class="footer-content">
-        <div class="footer-column"><h3>Your Multi Tools</h3><p style="color: var(--text-muted); margin-bottom: 1.8rem;">Premium solutions for professionals and businesses worldwide.</p><div style="display: flex; gap: 1.2rem;"><a href="https://facebook.com/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-facebook"></i></a><a href="https://twitter.com/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-twitter"></i></a><a href="https://instagram.com/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-instagram"></i></a><a href="https://linkedin.com/company/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.6);"><i class="fab fa-linkedin"></i></a></div></div>
-        <div class="footer-column"><h3>Quick Links</h3><ul class="footer-links"><li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="#tools"><i class="fas fa-chevron-right"></i> PDF Tools</a></li><li><a href="#av-tools"><i class="fas fa-chevron-right"></i> Audio & Video Tools</a></li><li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li></ul></div>
-        <div class="footer-column"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="pdf-compress.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> PDF Compressor</a></li><li><a href="video-compress.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Video Compressor</a></li><li><a href="audio-compress.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Audio Compressor</a></li><li><a href="file-converter.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> File Converter</a></li><li><a href="document-editor.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Document Editor</a></li></ul></div>
-<div class="footer-column"><h3>Contact Us</h3><ul class="footer-links"><li><a href="mailto:yourmultitools.space@gmail.com"><i class="fas fa-envelope"></i> yourmultitools.space@gmail.com</a></li><li><a href="https://maps.google.com/?q=India" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> India</a></li><li><a href="/terms" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-contract"></i> Terms and Conditions</a></li><li><a href="/privacy" target="_blank" rel="noopener noreferrer"><i class="fas fa-lock"></i> Privacy Policy</a></li></ul></div>>
+        <div class="footer-column">
+            <h3>Your Multi Tools</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.8rem;">Premium solutions for professionals and businesses worldwide.</p>
+            <div style="display: flex; gap: 1.2rem;">
+                <a href="https://facebook.com/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: var(--text-muted);">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: var(--text-muted);">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: var(--text-muted);">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/company/yourmultitools" target="_blank" rel="noopener noreferrer" style="font-size: 1.3rem; color: var(--text-muted);">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+           <div class="footer-column">
+            <h3>Popular Tools</h3>
+            <ul class="footer-links">
+                <li><a href="pdf-compress.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> PDF Compressor</a></li>
+                <li><a href="video-compress.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Video Compressor</a></li>
+                <li><a href="audio-compress.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Audio Compressor</a></li>
+                <li><a href="file-converter.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> File Converter</a></li>
+                <li><a href="document-editor.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Document Editor</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+                <li><a href="mailto:yourmultitools.space@gmail.com"><i class="fas fa-envelope"></i> yourmultitools.space@gmail.com</a></li>
+                <li><a href="https://maps.google.com/?q=India" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> India</a></li>
+                <li><a href="/terms" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-contract"></i> Terms and Conditions</a></li>
+                <li><a href="/privacy" target="_blank" rel="noopener noreferrer"><i class="fas fa-lock"></i> Privacy Policy</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="copyright"><p>© <span id="copyright-year"></span> yourmultitools.space. All rights reserved. | Premium Solutions for Professionals</p></div>
+    <div class="copyright">
+        <p>© <span id="copyright-year"></span> yourmultitools.space. All rights reserved. | Premium Solutions for Professionals</p>
+    </div>
 </footer>
 
 <script>
@@ -543,9 +1142,12 @@ body.light-mode footer {
             const particle = document.createElement('div');
             particle.classList.add('particle');
             const size = Math.random() * 40 + 10;
-            particle.style.width = `${size}px`; particle.style.height = `${size}px`;
-            particle.style.left = `${Math.random() * 100}%`; particle.style.top = `${Math.random() * 100 + 100}%`;
-            particle.style.animationDuration = `${Math.random() * 15 + 10}s`; particle.style.animationDelay = `${Math.random() * 5}s`;
+            particle.style.width = `${size}px`; 
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`; 
+            particle.style.top = `${Math.random() * 100 + 100}%`;
+            particle.style.animationDuration = `${Math.random() * 15 + 10}s`; 
+            particle.style.animationDelay = `${Math.random() * 5}s`;
             container.appendChild(particle);
         }
     }
@@ -553,7 +1155,9 @@ body.light-mode footer {
     // --- DYNAMIC COPYRIGHT YEAR ---
     function setCopyrightYear() {
         const yearSpan = document.getElementById('copyright-year');
-        if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+        if (yearSpan) { 
+            yearSpan.textContent = new Date().getFullYear(); 
+        }
     }
 
     // --- SCROLL-BASED ANIMATIONS (INTERSECTION OBSERVER) ---
@@ -579,7 +1183,12 @@ body.light-mode footer {
                 if (entry.isIntersecting) {
                     navLinks.forEach(link => {
                         if(link.getAttribute('href')){
-                            link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                            const targetId = link.getAttribute('href').substring(1);
+                            if (targetId === entry.target.id) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
                         }
                     });
                 }
@@ -643,7 +1252,7 @@ body.light-mode footer {
 
     // --- INITIALIZE ALL SCRIPTS ON DOM CONTENT LOADED ---
     document.addEventListener('DOMContentLoaded', function() {
-        initThemeToggle(); // Initialize the new theme toggle feature
+        initThemeToggle();
         createParticles();
         setCopyrightYear();
         initScrollAnimations();
